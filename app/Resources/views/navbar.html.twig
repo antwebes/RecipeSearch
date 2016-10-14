@@ -1,0 +1,21 @@
+{% block navbar %}
+   <div class="gtco-loader"></div>
+		
+    <nav class="gtco-nav" role="navigation">
+        <div class="gtco-container">
+            <div class="row">
+                <div class="col-sm-4 col-xs-12">
+                    <div id="gtco-logo">Recipe<em>.Search</em></div>
+                </div>
+                <div class="col-xs-8 text-right menu-1">
+                    <ul>
+                        <li><a href="{{ path('pagina', { pagina:'ayuda' } ) }}">Ayuda</a></li>                                            
+                        <li><a href="{{ path('pagina', { pagina:'sobre_nosotros' } ) }}">Sobre Nosotros</a></li>
+                        <li class="btn-cta"><a href="{{ path('pagina', { pagina: 'contacto' } ) }}"><span>Recetas</span></a></li>
+                    </ul>	
+                </div>
+            </div>
+        </div>
+    </nav>
+   
+{% endblock %}

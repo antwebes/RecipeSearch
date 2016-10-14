@@ -1,13 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{% block title %}{% endblock %} RecipeSearch</title>
+            {% block stylesheets %}
+                <link rel="apple-touch-icon" href="apple-touch-icon.png">
+                <link rel="stylesheet" href="css/normalize.css">
+                <link rel="stylesheet" href="css/main.css">
+                <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/animate.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/icomoon.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/themify-icons.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/bootstrap.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/magnific-popup.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/bootstrap-datetimepicker.min.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/owl.carousel.min.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/owl.theme.default.min.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/style.css") }}">
+                <script src="{{ asset("bundles/recipe/js/modernizr-2.6.2.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/jquery.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/jquery.easing.1.3.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/bootstrap.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/jquery.waypoints.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/owl.carousel.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/jquery.countTo.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/jquery.stellar.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/jquery.magnific-popup.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/magnific-popup-options.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/moment.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/bootstrap-datetimepicker.min.js") }}"></script>
+                <script src="{{ asset("bundles/recipe/js/main.js") }}"></script>
+            {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body id="{% block id '' %}">
+        <div id="page">
+            {% block navbar %}
+                {{include ('navbar.html.twig') }}
+            {% endblock %}
+            
+            {% block body %}
+            {% endblock %}
+            
+            {% block footer %}
+                {{ include  ('footer.html.twig') }}
+            {% endblock %}
+                
+            {% block javascripts %}<script src="js/vendor/modernizr-2.8.3.min.js"></script>{% endblock %}
+        </div>
     </body>
 </html>
