@@ -4,10 +4,14 @@
 
     use Doctrine\ORM\Mapping as ORM;
     use Ant\RecipeBundle\Util\Slugger;
+    use Vich\UploaderBundle\Mapping\Annotation as Vich;
+    use Symfony\Component\HttpFoundation\File\File;
+    
 
     
     /**
     * @ORM\Entity(repositoryClass="Ant\RecipeBundle\Repository\RecipeRepository")
+    * @Vich\Uploadable
     */
     class Recipe{
         
@@ -30,14 +34,14 @@
         *
         * @ORM\Column(name="descripcion", type="text", nullable=true)
         */
-        protected $description;
+        protected $descripcion;
         
         /**
         * @var string
         *
-        * @ORM\Column(name="elaboration", type="text", nullable=true)
+        * @ORM\Column(name="elaboracion", type="text", nullable=true)
         */
-        protected $elaboration;        
+        protected $elaboracion;        
         
         /** 
          * @var time
@@ -45,6 +49,27 @@
          * @ORM\Column(type="integer") 
          */
         protected $time;
+        
+        /** 
+         * @var string
+         * 
+         * @ORM\Column(name="image", type="string") 
+         */
+        protected $image;
+        
+        /** 
+         * @var string
+         * 
+         * @Vich\UploadableField(mapping="recipe_images", fileNameProperty="image")
+         */
+        protected $imageFile;
+        
+        /** 
+         * @var datetime
+         * 
+         * @ORM\Column(type="datetime", nullable=true) 
+         */
+        protected $updatedAt;
         
         /**
         * @var string
@@ -85,12 +110,20 @@
             return $this->name;
         }
 
-        function getDescription() {
-            return $this->description;
+        function getDescripcion() {
+            return $this->descripcion;
         }
 
-        function getElaboration() {
-            return $this->elaboration;
+        function getElaboracion() {
+            return $this->elaboracion;
+        }
+        
+        function getImageFile() {
+            return $this->imageFile;
+        }
+        
+        function getImage() {
+            return $this->image;
         }
 
         function getTime() {
@@ -126,12 +159,23 @@
             $this->slug = Slugger::getSlug($name);
         }
 
-        function setDescription($description) {
-            $this->description = $description;
+        function setDescripcion($descripcion) {
+            $this->descripcion = $descripcion;
         }
 
-        function setElaboration($elaboration) {
-            $this->elaboration = $elaboration;
+        function setElaboracion($elaboracion) {
+            $this->elaboracion = $elaboracion;
+        }
+        
+        function setImage($image) {
+            $this->image = $image;
+        }
+        
+        function setImageFile(File $image = null){
+            $this->imageFile = $image;
+            if($image){
+                $this->updatedAt = new \DateTime('now');
+            }
         }
 
         function setTime($time) {
@@ -159,7 +203,7 @@
         }
 
         public function __toString(){
-            return $this->getNombre();
+            return $this->getName();
         }
         
     }

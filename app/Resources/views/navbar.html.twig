@@ -9,9 +9,9 @@
                 </div>
                 <div class="col-xs-8 text-right menu-1">
                     <ul>
-                        <li><a href="{{ path('pagina', { pagina:'ayuda' } ) }}">Ayuda</a></li>                                            
-                        <li><a href="{{ path('pagina', { pagina:'sobre_nosotros' } ) }}">Sobre Nosotros</a></li>
-                        <li class="btn-cta"><a href="{{ path('pagina', { pagina: 'contacto' } ) }}"><span>Recetas</span></a></li>
+                        <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'ayuda' } ) }}">Ayuda</a></li>                                            
+                        <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'sobre_nosotros' } ) }}">Sobre Nosotros</a></li>
+                        <li class="btn-cta primary-color"><a href="{{ path('pagina', { nombrePagina: 'recipe' } ) }}"><span  id="linavbar">Recetas</span></a></li>
                     </ul>	
                 </div>
             </div>

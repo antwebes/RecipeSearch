@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    app.path.recipe_images: /uploads/images/recipe
     
 
 framework:
@@ -65,3 +66,112 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+    
+vich_uploader:
+    db_driver: orm
+    mappings:
+        recipe_images:
+            uri_prefix:         %app.path.recipe_images%
+            upload_destination: %kernel.root_dir%/../web/uploads/images/recipes
+
+easy_admin:
+    entities:
+        Recipe:
+            class: Ant\RecipeBundle\Entity\Recipe
+            label: 'Recipe'
+            list:
+               title: "Recetas"
+               fields: 
+                   - 'id'
+                   - { property: 'name', type: 'text'}
+                   - { property: 'descripcion', type: 'text'}
+                   - { property: 'elaboracion', type: 'text'}
+                   - { property: 'image', type: 'image', base_path: '%app.path.recipe_images%'}
+                   - { property: 'time', type: 'time'}
+                   - { property: 'category', type: 'text'}
+                   - { property: 'slug', type: 'url'}
+                   - { property: 'path_video', type: 'text'}
+                   - { property: 'diners', type: 'integer'}
+            show:
+               fields: 
+                   - 'id'
+                   - { property: 'name', type: 'text'}
+                   - { property: 'descripcion', type: 'text'}
+                   - { property: 'elaboracion', type: 'text'}
+                   - { property: 'image', type: 'image', base_path: '%app.path.recipe_images%'}
+                   - { property: 'time', type: 'time'}
+                   - { property: 'category', type: 'text'}
+                   - { property: 'slug', type: 'url'}
+                   - { property: 'path_video', type: 'text'}
+                   - { property: 'diners', type: 'integer'}
+            form:
+               title: "Create/edit recipes"
+               fields: 
+                   - 'id'
+                   - { property: 'name', type: 'text'} 
+                   - { property: 'descripcion', type: 'text'}
+                   - { property: 'elaboracion', type: 'text'}
+                   - { property: 'imageFile', type: 'vich_image'}
+                   - { property: 'time', type: 'time'}
+                   - { property: 'category', type: 'text'}
+                   - { property: 'slug', type: 'url'}
+                   - { property: 'path_video', type: 'text'}
+                   - { property: 'diners', type: 'integer'}
+        Ingredient:
+            class: Ant\RecipeBundle\Entity\Ingredient
+            label: 'Ingredient'
+            list:
+               title: "Ingredientes"
+               fields: 
+                   - 'id'
+                   - { property: 'name', type: 'text'}
+                   - { property: 'created_at', type: 'datetime'}
+            show:
+               fields: 
+                   - 'id'
+                   - { property: 'name', type: 'text'}
+                   - { property: 'created_at', type: 'datetime'}                       
+            form:
+               title: "Create/edit ingredients"
+               fields: 
+                   - 'id'
+                   - { property: 'name', type: 'text'}
+                   - { property: 'created_at', type: 'datetime'}               
+        RecipeIngredient:
+            class: Ant\RecipeBundle\Entity\RecipeIngredient
+            label: 'RecipeIngredient'
+            list:
+                title: "Relación"
+                fields: 
+                    - 'id'
+                    - { property: 'ingredient'}
+                    - { property: 'recipe'}
+                    - { property: 'quantity', type: 'integer'} 
+                    - { property: 'mandatory'}
+            show:
+                title: "Relación"
+                fields:
+                    - 'id'
+                    - { property: 'ingredient_id', type: 'integer'}
+                    - { property: 'recipe_id', type: 'integer'}
+                    - { property: 'quantity', type: 'integer'} 
+                    - { property: 'mandatory', type: 'boolean'}
+            form:
+                title: "Create/Edit relations"
+                fields:
+                    - 'id'
+                    - { property: 'ingredient'}
+                    - { property: 'recipe'}
+                    - { property: 'quantity', type: 'integer'} 
+                    - { property: 'mandatory'}
+                     
+    list:
+        max_results: 25
+
+    design:
+        brand_color:  'orange'
+        color_scheme: 'light'
+    
+        
+
+            

@@ -1,0 +1,34 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-Oct-2016, 12:06:57
+    Author     : osboxes
+*/
+
+
+button, input, optgroup, select, textarea {
+    color: #1C1C1C;
+    font: inherit;
+    margin: 0;
+}
+
+ul#elementos {
+    color: #ff8000;
+    font-family: cursive;
+    border-style:groove;
+}
+
+div#match{
+    color: #fff;
+}
+
+a#anavbar {
+    color: #265a88;
+}
+
+span#linavbar{
+    color: #265a88;
+}

@@ -3,13 +3,26 @@
     namespace Ant\RecipeBundle\Entity;
 
     use Doctrine\ORM\Mapping as ORM;
+    use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
     
     /**
     * @ORM\Entity
+     * @UniqueEntity(
+     *    fields={"ingredient", "recipe"},
+     *    errorPath="recipe",
+     *    message="Este ingrediente ya está en esta receta"
+     * )
     */
     class RecipeIngredient{
         
+        
+        /** 
+         * @ORM\Id
+         * @ORM\Column(name="id", type="integer")
+         * @ORM\GeneratedValue(strategy="AUTO")
+         */
+        protected $id;
         
         /**
         * @var string
@@ -26,18 +39,22 @@
         protected $mandatory;
         
         /** 
-         * @ORM\Id()
+         * @var int
          * @ORM\ManyToOne(targetEntity="Ant\RecipeBundle\Entity\Ingredient", inversedBy="recipeIngredients") 
          * @ORM\JoinColumn(name="ingredient_id", referencedColumnName="id", nullable=true) 
          */
         private $ingredient;
         
         /** 
-         * @ORM\Id()
+         * @var int
          * @ORM\ManyToOne(targetEntity="Ant\RecipeBundle\Entity\Recipe", inversedBy="recipeIngredients") 
          * @ORM\JoinColumn(name="recipe_id", referencedColumnName="id", nullable=false) 
          */
         private $recipe;
+        
+        function getId() {
+            return $this->id;
+        }
         
         function getQuantity() {
             return $this->quantity;
@@ -53,6 +70,10 @@
 
         function getRecipe() {
             return $this->recipe;
+        }
+        
+        function setId($id){
+            $this->id = $id;
         }
 
         function setQuantity($quantity) {
@@ -71,9 +92,7 @@
             $this->recipe = $recipe;
         }
 
-        public function __toString(){
-            return $this->getNombre();
-        }
+        
     }
 
 

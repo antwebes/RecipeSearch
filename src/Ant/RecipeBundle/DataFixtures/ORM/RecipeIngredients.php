@@ -18,15 +18,12 @@
             $ingredients = $manager->getRepository('RecipeBundle:Ingredient')->findAll();
             $recipes = $manager->getRepository('RecipeBundle:Recipe')->findAll();
             foreach ($recipes as $recipe) {
-                $entidad = new RecipeIngredient();
+                $entidad = new RecipeIngredient();                
                 $entidad->setMandatory(true);
-                $entidad->setQuantity(1000);
-                
+                $entidad->setQuantity(1000);                
                 $ingredient = $ingredients[0];
                 $entidad->setIngredient($ingredient);
-                
-                $entidad->setRecipe($recipe);
-                
+                $entidad->setRecipe($recipe);                
                 $manager->persist($entidad);
             }    
             

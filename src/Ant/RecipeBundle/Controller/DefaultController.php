@@ -1,24 +1,18 @@
 <?php
 
     namespace Ant\RecipeBundle\Controller;
+    
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
     class DefaultController extends Controller{
-        /**
-        * @Route(
-        * "/sitio/{nombrePagina}",
-        * defaults={ "nombrePagina" = "ayuda" },
-        * requirements={ "nombrePagina" = "ayuda|privacidad|sobre_nosotros" },
-        * name="pagina"
-        * )
-        */
+
         /**
         * @Route(
         * "/sitio/{nombrePagina}/",
         * defaults={ "nombrePagina" = "ayuda" },
-        * requirements={ "nombrePagina" = "ayuda|recipe|sobre_nosotros" },
+        * requirements={ "nombrePagina" = "ayuda|recipe|sobre_nosotros|recipeselected" },
         * name="pagina"
         * )
         */

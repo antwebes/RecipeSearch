@@ -5,3 +5,19 @@ recipe:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+tuto_autocomplete:
+    path:     /autocomplete
+    defaults: { _controller: RecipeBundle:Autocomplete:index }
+
+ajax_autocomplete_ingredients:
+    path:     /ajax/autocomplete/update/data
+    defaults: { _controller: RecipeBundle:AjaxAutocomplete:updateData }
+  
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+    
+    
+  
