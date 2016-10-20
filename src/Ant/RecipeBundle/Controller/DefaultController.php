@@ -36,4 +36,18 @@
                 'recipe' => $recipe
                 ));
         }
+        
+        /**
+        * @Route("/", name="portadaindex")
+        */
+        public function normalAction(){
+            $em = $this->getDoctrine()->getManager();
+            $recipe = $em->getRepository('RecipeBundle:Recipe')->findOneBy(array(
+                'id' => 1
+                ));
+            
+            return $this->render('portada.html.twig', array(
+                'recipe' => $recipe
+                ));
+        }
 }
