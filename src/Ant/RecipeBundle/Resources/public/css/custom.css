@@ -32,3 +32,16 @@ a#anavbar {
 span#linavbar{
     color: #265a88;
 }
+
+#imagerecipe{
+    float: right
+}
+
+#ingredientrecipe{
+    float: left;
+}
+
+.sinpadding[class*="col-"]{
+    padding: 0;
+    margin: 0;
+}

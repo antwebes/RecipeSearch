@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+    {% block body %}        
+	<div class="gtco-section">
+		<div class="gtco-container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
+					<h2 class="cursive-font primary-color">✔Búsqueda completada ✔</h2>
+					<p>Lista de nuestras recetas que coinciden en porcentaje a tu criterio de búsqueda específico siendo 100% la mayor coincidencia posible</p>
+				</div>
+			</div>
+			<div class="row">
+                                {% for recipe in recipes %}
+				
+				
+
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<a href="#" class="fh5co-card-item image-popup">
+						<figure>
+							<div class="overlay"><i class="ti-plus"></i></div>
+							<img src="{{ asset('uploads/images/recipes/' ~ recipe.image) | imagine_filter('new_thumb') }}" alt="{{ recipe.name }}" class="img-responsive">
+						</figure>
+						<div class="fh5co-text">
+							<h2>{{ recipe.name }}</h2>
+							<p>{{ recipe.descripcion | truncate(50, true)}} </p>
+							<p><span class="price cursive-font">$23.10</span></p>
+						</div>
+					</a>
+				</div>
+
+				
+                                {% endfor %}
+			</div>
+		</div>
+	</div>
+        
+    {% endblock %}

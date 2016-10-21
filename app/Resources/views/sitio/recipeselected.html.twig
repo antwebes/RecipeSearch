@@ -1,14 +1,49 @@
 {% extends 'base.html.twig' %}
     {% block body %}
-        <div class="gtco-section">
+        <div id="gtco-counter" class="gtco-section">
+            <h2 class="cursive-font primary-color">{{ recipe.name }}</h2><br>
             <div class="gtco-container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-                        <h2 class="cursive-font primary-color">✔ Nombre de la receta ✔</h2>
+                
+                <div class="container">                    
+                    <div class="col-md-12 ">
+                        <div class="col-xs-4"  id="ingredientrecipe">
+                            <h3>{{ recipe.descripcion }}</h3> <br> <br>
+                            <p>##Ingredientes##</p>
+                        </div>
+                        <div id="imagerecipe" class="col-xs-8">
+                            {% set runtimeConfig = {"thumbnail": {"size": [440, 440] }} %} 
+                            <img src="{{ asset('uploads/images/recipes/' ~ recipe.image) | imagine_filter('my_thumb', runtimeConfig) }}"> <br>
+                            <strong>Comensales: {{ recipe.diners }}</strong><br>
+                            <strong>Tiempo de receta: {{ recipe.time }} </strong><br>
+                            <strong>Categoría: {{ recipe.category }} </strong><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">                    
+                    <div class="col-md-12 col-sm-3 animate-box" data-animate-effect="fadeInUp">
+                        <div class="feature-center">
+                            <span class="counter-label">{{ recipe.elaboracion }}</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
+                        <div class="feature-center">
+                            <video src="{{ recipe.pathvideo }}" controls>
+                                Tu navegador no implementa el contenido <code>video</code></video>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
+                        <div class="feature-center">
+                            <button>##Imprimir PDF##</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
+                        <div class="feature-center">
+                            <button>##Enviar##</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+	</div>
         
         
         

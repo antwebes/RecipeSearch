@@ -73,7 +73,35 @@ vich_uploader:
         recipe_images:
             uri_prefix:         %app.path.recipe_images%
             upload_destination: %kernel.root_dir%/../web/uploads/images/recipes
+            
+            
+liip_imagine:
+    resolvers:
+        default:
+            web_path: ~
 
+    filter_sets:
+        cache: ~
+
+        # the name of the "filter set"
+        my_thumb:
+
+            # adjust the image quality to 75%
+            quality: 75
+
+            # list of transformations to apply (the "filters")
+            filters:
+
+                thumbnail:    { size: [200, 200], mode: outbound }
+                
+        new_thumb:
+            
+            quality: 75
+            
+            filters:
+                
+                thumbnail: { size: [200, 200], mode: outbound }
+                
 easy_admin:
     entities:
         Recipe:
@@ -87,9 +115,9 @@ easy_admin:
                    - { property: 'descripcion', type: 'text'}
                    - { property: 'elaboracion', type: 'text'}
                    - { property: 'image', type: 'image', base_path: '%app.path.recipe_images%'}
-                   - { property: 'time', type: 'time'}
+                   - { property: 'time'}
                    - { property: 'category', type: 'text'}
-                   - { property: 'slug', type: 'url'}
+                   - { property: 'slug', type: 'text'}
                    - { property: 'path_video', type: 'text'}
                    - { property: 'diners', type: 'integer'}
             show:
@@ -99,9 +127,9 @@ easy_admin:
                    - { property: 'descripcion', type: 'text'}
                    - { property: 'elaboracion', type: 'text'}
                    - { property: 'image', type: 'image', base_path: '%app.path.recipe_images%'}
-                   - { property: 'time', type: 'time'}
+                   - { property: 'time'}
                    - { property: 'category', type: 'text'}
-                   - { property: 'slug', type: 'url'}
+                   - { property: 'slug', type: 'text'}
                    - { property: 'path_video', type: 'text'}
                    - { property: 'diners', type: 'integer'}
             form:
@@ -112,9 +140,9 @@ easy_admin:
                    - { property: 'descripcion', type: 'text'}
                    - { property: 'elaboracion', type: 'text'}
                    - { property: 'imageFile', type: 'vich_image'}
-                   - { property: 'time', type: 'time'}
+                   - { property: 'time'}
                    - { property: 'category', type: 'text'}
-                   - { property: 'slug', type: 'url'}
+                   - { property: 'slug', type: 'text'}
                    - { property: 'path_video', type: 'text'}
                    - { property: 'diners', type: 'integer'}
         Ingredient:
