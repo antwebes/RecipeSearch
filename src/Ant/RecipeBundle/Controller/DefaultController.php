@@ -23,6 +23,7 @@
 
             return $this->render('sitio/'.$nombrePagina.'.html.twig');
         }
+
         
         /**
          * @Route("/search", name="search_recipe")

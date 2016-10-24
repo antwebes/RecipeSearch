@@ -100,7 +100,18 @@ liip_imagine:
             
             filters:
                 
-                thumbnail: { size: [200, 200], mode: outbound }
+                thumbnail: { size: [200, 200], mode: outbound }                
+                
+knp_paginator:
+    page_range: 5
+    default_options:
+        page_name:           page
+        sort_field_name:     sort
+        sort_direction_name: direction
+        distinct: true
+    template:
+        pagination:          KnpPaginatorBundle:Pagination:sliding.html.twig
+        sortable:            KnpPaginatorBundle:Pagination:sortable_link.html-twig
                 
 easy_admin:
     entities:
@@ -137,8 +148,8 @@ easy_admin:
                fields: 
                    - 'id'
                    - { property: 'name', type: 'text'} 
-                   - { property: 'descripcion', type: 'text'}
-                   - { property: 'elaboracion', type: 'text'}
+                   - { property: 'descripcion', type: 'textarea'}
+                   - { property: 'elaboracion', type: 'ckeditor'}
                    - { property: 'imageFile', type: 'vich_image'}
                    - { property: 'time'}
                    - { property: 'category', type: 'text'}

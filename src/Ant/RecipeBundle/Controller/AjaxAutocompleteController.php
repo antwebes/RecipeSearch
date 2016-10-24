@@ -8,6 +8,7 @@
     use Symfony\Component\HttpFoundation\JsonResponse;
     use Ant\RecipeBundle\Entity\Ingredient;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route; 
+    
 
     class AjaxAutocompleteController extends Controller
     {

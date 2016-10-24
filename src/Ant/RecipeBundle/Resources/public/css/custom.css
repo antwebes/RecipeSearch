@@ -45,3 +45,12 @@ span#linavbar{
     padding: 0;
     margin: 0;
 }
+
+figure{
+    width: 350px;
+    height: 350px;
+}
+
+div#ayuda{
+    margin-top: 150px;
+}
