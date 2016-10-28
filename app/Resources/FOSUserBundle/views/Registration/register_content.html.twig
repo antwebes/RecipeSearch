@@ -1,0 +1,51 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+    <div class="login">
+        <div class="login-header">
+            <h1>Register</h1>
+        </div>
+        <div class="login-form">
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+            <label class="control-label required" for="fos_user_registration_form_username">
+                <h3>Username</h3>
+            </label>
+                <div class="username">            
+                    {{ form_errors(form.username) }}
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <br>
+
+            <label class="control-label required" for="fos_user_registration_form_email">
+                <h3>E-mail</h3> 
+            </label>
+                <div class="email">
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <br>
+
+            <label class="control-label required" for="fos_user_registration_form_plainPassword">
+                <h3>Password</h3> 
+            </label>
+                <div class="password">
+                    {{ form_errors(form.plainPassword.first) }}
+                    {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <br>
+
+            <label class="control-label required" for="fos_user_registration_form_plainPassword">
+                <h3>Password confirmation</h3> 
+            </label>
+                <div class="password">
+                    {{ form_errors(form.plainPassword.second) }}
+                    {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <br>
+
+            <div>
+                <input type="submit" value="{{ 'Register'|trans }}" />
+            </div>
+        </div>
+    </div>
+{{ form_end(form) }}

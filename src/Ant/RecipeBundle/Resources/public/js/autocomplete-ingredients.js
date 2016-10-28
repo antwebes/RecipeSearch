@@ -5,7 +5,7 @@ $(document).ready(function(){
                      var data = {input: input}; 
                      $.ajax({
                              type: "GET",
-                             url: ROOT_URL + "/autocomplete/update/data", 
+                             url: "/autocomplete/update/data", 
                              data: data, 
                              dataType: 'json', 
                              timeout: 3000,

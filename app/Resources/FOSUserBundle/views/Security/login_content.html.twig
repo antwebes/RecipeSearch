@@ -1,0 +1,38 @@
+{% trans_default_domain 'FOSUserBundle' %}
+    
+    
+    {% block body %}
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+            {% endif %}
+
+                <div class="login">
+                  <div class="login-header">
+                    <h1>Login</h1>
+                  </div>
+                    
+                  <div class="login-form">
+                    <div class="input-group margin-bottom-20">
+                        <label for="username"><strong>{{ 'User'|trans }}</strong></label>
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+                    </div>
+                    <div class="input-group margin-bottom-20">
+                        <label for="password"><strong>{{ 'Pass'|trans }}</strong></label>
+                            <input type="password" id="password" name="_password" required="required" />
+                    </div>
+                    {% if error %}
+                        <div id="error"><strong>{{ error.messageKey|trans(error.messageData, 'Error') }}</strong></div>
+                    {% endif %}
+                    <input type="submit" id="_submit" name="_submit" value="{{ 'Login'|trans }}" />                    <br>                    
+                        <a class="sign-up" href=" {{ path ("fos_user_registration_register") }}">Sign Up!</a>
+                        <br>
+                        <h6 class="no-access">Can't access your account?</h6>
+                  </div>
+                </div>
+                <div class="error-page">
+                  <div class="try-again">Error: Try again?</div>
+                </div>
+        </form>
+    
+    {% endblock %}

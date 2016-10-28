@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} RecipeSearch</title>        
+            {% block stylesheets %}
+                <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/style2.css") }}">
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/customcontent.css") }}"
+                <link href='http://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+            {% endblock %}    
+    </head>
+
+    <body id="{% block id '' %}">
+        <div id="page">
+            {% block body %}
+            {% block fos_user_content %}
+            {% endblock %}
+
+            {% endblock %}
+
+            {% block javascripts %}
+                <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+                <script src="{{ asset("bundles/recipe/js/index2.js") }}"></script>   
+            {% endblock %}
+
+
+      </div>
+    
+    </body>
+</html>

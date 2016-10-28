@@ -13,7 +13,7 @@
     class AjaxAutocompleteController extends Controller
     {
         /**
-        * @Route("/portada/autocomplete/update/data", name="autocomplete")
+        * @Route("/autocomplete/update/data", name="autocomplete")
         */
         public function updateDataAction(Request $request)
         {

@@ -5,14 +5,67 @@
         <div class="gtco-container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
-                    <div id="gtco-logo">Recipe<em>.Search</em></div>
+                    <div id="gtco-logo">Recipe <a href="{{ path('portada', { nombrePagina:'/' } ) }}"><em>.Search</em></a></div>
                 </div>
-                <div class="col-xs-8 text-right menu-1">
+                
+                <div class="col-xs-6  menu-1">
                     <ul>
                         <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'ayuda' } ) }}">Ayuda</a></li>                                            
                         <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'sobre_nosotros' } ) }}">Sobre Nosotros</a></li>
-                        <li class="btn-cta primary-color"><a href="{{ path('pagina', { nombrePagina: 'ayuda' } ) }}"><span  id="linavbar">Recetas</span></a></li>
-                    </ul>	
+                        <li class="btn-cta primary-color"><a href="{{ path('search_recipe', { nombrePagina: 'search' } ) }}"><span  id="linavbar">Recetas</span></a></li>                         
+        
+                    </ul>                    
+                </div>
+                <div class="col-xs-2 menu-2">
+                    <ul class="nav navbar-nav navbar-right" id="centernavbar">
+                        {% if app.user %}
+
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                {% if is_granted("ROLE_USER") %}
+                                    <p id="profilenamep"><strong>Hi, {{ app.user.username }}</strong></p> 
+                                {% endif %}
+                                
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <div class="navbar-login">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <p class="text-center">
+                                                    <i class="fa fa-user" id="fa-user_icon"></i>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <p class="text-left"><strong>Nombre Apellido</strong></p>
+                                                <p class="text-left small">correoElectronico@email.com</p>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <div class="navbar-login navbar-login-session">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <p class="text-left">
+                                                    {% if is_granted("ROLE_SUPER_ADMIN") %}
+                                                        <a href="{{ path('easyadmin') }}" class="btn btn-primary btn-block btn-sm">Administrar página</a>
+                                                    {% else %}
+                                                        <a href="#" disabled="true" class="btn btn-primary btn-block btn-sm">Administrar página</a>
+                                                    {% endif %}
+                                                </p>
+                                                <p>
+                                                    <a href="{{ path('logout' ) }}" class="btn btn-danger btn-block">Cerrar Sesion</a>
+                                                </p>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>  
+                        {% else %}
+                            <a href="{{ path ('fos_user_security_login') }}"><em>Inicia sesión</em></a>
+                        {% endif %}
+                    </ul>
                 </div>
             </div>
         </div>

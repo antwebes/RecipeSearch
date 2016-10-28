@@ -24,6 +24,7 @@
             return $this->render('sitio/'.$nombrePagina.'.html.twig');
         }
 
+
         
         /**
          * @Route("/search", name="search_recipe")
@@ -59,7 +60,7 @@
         }
         
         /**
-        * @Route("/portada", name="portada")
+        * @Route("/", name="portada")
         */
         public function portadaAction(){
             $em = $this->getDoctrine()->getManager();

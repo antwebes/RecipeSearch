@@ -54,3 +54,38 @@ figure{
 div#ayuda{
     margin-top: 150px;
 }
+
+div#block_user{
+    margin-top: 150px;
+}
+
+.navbar-login
+{
+    width: 305px;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.icon-size
+{
+    font-size: 87px;
+}
+
+p#profilenamep{
+    color: #000;
+}
+
+ul#centernavbar{
+    clear: right;
+}
+
+i#fa-user_icon{
+    font-size: 100px;
+}

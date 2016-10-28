@@ -1,0 +1,10 @@
+div#error{
+    border-radius: 27px 27px 27px 27px;
+    -moz-border-radius: 27px 27px 27px 27px;
+    -webkit-border-radius: 27px 27px 27px 27px;
+    border: 3px solid #f72828;
+    background-color: #fff;
+    color: #f72828;
+    width: 150px;
+    margin: auto;
+}
