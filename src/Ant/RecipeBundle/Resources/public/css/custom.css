@@ -18,7 +18,8 @@ button, input, optgroup, select, textarea {
 ul#elementos {
     color: #ff8000;
     font-family: cursive;
-    border-style:groove;
+    border-style: groove;
+    list-style: none;
 }
 
 div#match{
