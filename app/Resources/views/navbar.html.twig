@@ -1,7 +1,7 @@
 {% block navbar %}
    <div class="gtco-loader"></div>
 		
-    <nav class="gtco-nav" role="navigation">
+    <nav class="gtco-nav" role="navigation" id="navbardiv">
         <div class="gtco-container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
@@ -10,9 +10,9 @@
                 
                 <div class="col-xs-6  menu-1">
                     <ul>
-                        <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'ayuda' } ) }}">Ayuda</a></li>                                            
-                        <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'sobre_nosotros' } ) }}">Sobre Nosotros</a></li>
-                        <li class="btn-cta primary-color"><a href="{{ path('search_recipe', { nombrePagina: 'search' } ) }}"><span  id="linavbar">Recetas</span></a></li>                         
+                        <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'ayuda' } ) }}">{% trans %} navbar.ayuda {% endtrans %}</a></li>                                            
+                        <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'sobre_nosotros' } ) }}">{% trans %} navbar.nosotros {% endtrans %}</a></li>
+                        <li class="btn-cta primary-color"><a href="{{ path('search_recipe', { nombrePagina: 'search' } ) }}"><span  id="linavbar">{% trans %} navbar.recetas {% endtrans %}</span></a></li>                         
         
                     </ul>                    
                 </div>
@@ -22,7 +22,7 @@
 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 {% if is_granted("ROLE_USER") %}
-                                    <p id="profilenamep"><strong>Hi, {{ app.user.username }}</strong></p> 
+                                    <p id="profilenamep"><strong>{% trans %} navbar.hola {% endtrans %} {{ app.user.username }}</strong></p> 
                                 {% endif %}
                                 
                             </a>
@@ -49,13 +49,13 @@
                                             <div class="col-lg-12">
                                                 <p class="text-left">
                                                     {% if is_granted("ROLE_SUPER_ADMIN") %}
-                                                        <a href="{{ path('easyadmin') }}" class="btn btn-primary btn-block btn-sm">Administrar página</a>
+                                                        <a href="{{ path('easyadmin') }}" class="btn btn-primary btn-block btn-sm">{% trans %} navbar.administrar {% endtrans %}</a>
                                                     {% else %}
-                                                        <a href="#" disabled="true" class="btn btn-primary btn-block btn-sm">Administrar página</a>
+                                                        <a href="#" disabled="true" class="btn btn-primary btn-block btn-sm">{% trans %} navbar.administrar {% endtrans %}</a>
                                                     {% endif %}
                                                 </p>
                                                 <p>
-                                                    <a href="{{ path('logout' ) }}" class="btn btn-danger btn-block">Cerrar Sesion</a>
+                                                    <a href="{{ path('logout' ) }}" class="btn btn-danger btn-block">{% trans %} navbar.cierre {% endtrans %}</a>
                                                 </p>                                                
                                             </div>
                                         </div>
@@ -63,7 +63,7 @@
                                 </li>
                             </ul>  
                         {% else %}
-                            <a href="{{ path ('fos_user_security_login') }}"><em>Inicia sesión</em></a>
+                            <a href="{{ path ('fos_user_security_login') }}"><em>{% trans %} navbar.inicio {% endtrans %}</em></a>
                         {% endif %}
                     </ul>
                 </div>

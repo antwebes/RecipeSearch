@@ -1,0 +1,40 @@
+portada:
+    busqueda: Busca la receta que necesitas
+    ingredientesescogidos: Ingredientes escogidos
+    ingredientes: Ingredientes
+    encuentrareceta: Encuentra tu receta
+    recipesearcher: La página que rompe con las páginas de recetas tradicionales, no busques una receta intentando tener los ingredientes necesarios en tu casa, simplemente elige cuales quieres usar y nosotros te proponemos qué recetas podrías elaborar segun tus especificaciones
+    recetadisponible: Recetas disponibles
+    visitas: Visitas registradas
+    anno: Año de comienzo
+    frase: Comer para vivir vivir para comer
+    
+footer: 
+    social: Búscanos
+    touch: Contáctanos
+    copyright: 2016 Free HTML5. Todos los derechos reservados.
+    disenno: Diseñado por
+    iconos: Iconos de
+    
+navbar:
+    ayuda: Ayuda
+    nosotros: Sobre nosotros
+    recetas: Recetas
+    inicio: Inicia sesión
+    hola: Hola,
+    cierre: Cerrar sesión
+    administrar: Administrar página
+    
+recipe:
+    busqueda: Búsqueda completada
+    porcentaje: Lista de nuestras recetas que coinciden en porcentaje a tu criterio de búsqueda específico siendo 100% la mayor coincidencia posible
+
+login:
+    accesodenegado: ¿No puedes acceder a tu cuenta?
+    registrar: ¡Regístrate!
+    
+nosotros:
+    suscribe: ¡Suscríbete ya!
+    suscripcion: Suscribete
+    noticias: Se el primero en enterarte de todas nuestras noticias y recetas
+    condiciones: Las presentes condiciones generales de uso del portal regulan el acceso y la utilización del portal incluyendo los contenidos y los servicios puestos a disposición de los usuarios en y/o a través del portal, bien por el portal, bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilización de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas condiciones específicas.

@@ -14,7 +14,7 @@ $(document).ready(function(){
                                      $('#matchList li').on('click', function() {
                                              $('#myTextField').val($(this).text()); 
                                              $('#match').text('');
-                                             $('#elementos').append('<li>'+$(this).text()+'</li>');
+                                             $('#elementos').append('<li><span> <i class="removeIngredient fa fa-trash"></i> '+$(this).text()+'</span></li>');
                                              $("#sendIngredients").prop('disabled', false);
                                      });     
                              },
@@ -26,6 +26,11 @@ $(document).ready(function(){
                      $('#match').text(''); 
              }
      });
+     $(document).on('click','.removeIngredient', function(){
+         
+            $(this).parent().remove();
+        });
+     
  });
 
 

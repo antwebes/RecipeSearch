@@ -1,19 +1,19 @@
 {% block footer %}
-    <footer id="gtco-footer" role="contentinfo" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
+    <footer id="gtco-footer" role="contentinfo" data-stellar-background-ratio="0.5">
+        <div class="overlay" id="footerbar"></div>
         <div class="gtco-container">
             <div class="row row-pb-md">
                 <div class="col-md-12 text-center">
                         <div class="gtco-widget">
-                            <h3>Get In Touch</h3>
+                            <h3>{% trans %} footer.touch {% endtrans %}</h3>
                             <ul class="gtco-quick-contact">
-                                <li><a href="#"><em class="glyphicon glyphicon-phone-alt"></em> +34 632 88 10 24</a></li>
-                                <li><a href="#"><em class="glyphicon glyphicon-envelope"></em> recipesearch@hotmail.com</a></li>
-                                <li><a href="#"><em class="glyphicon glyphicon-info-sign"></em> Información en vivo</a></li>
+                                <li><a href="#"><em class="fa fa-mobile"></em> +34 632 88 10 24</a></li>
+                                <li><a href="#"><em class="fa fa-envelope-o"></em> recipesearch@hotmail.com</a></li>
+                                <li><a href="#"><em class="fa fa-info-circle"></em> Información en vivo</a></li>
                             </ul>
                         </div>
                         <div class="gtco-widget">
-                            <h3>Get Social</h3>
+                            <h3>{% trans %} footer.social {% endtrans %}</h3>
                             <ul class="gtco-social-icons">
                                 <li><a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="http://www.facebook.com"><i class="fa fa-facebook-square"></i></a></li>
@@ -24,8 +24,8 @@
                     </div>
 
                     <div class="col-md-12 text-center copyright">
-                        <p><small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-                            <small class="block">Designed by <a target="_blank">DCD.co</a> Icons by: <a href="glyphicons.com" target="_blank">Glyphicons</a></small></p>
+                        <p><small class="block">&copy; {% trans %} footer.copyright {% endtrans %}</small> 
+                            <small class="block">{% trans %} footer.disenno {% endtrans %}: <a target="_blank">DCD.co</a> {% trans %} footer.iconos {% endtrans %} <a href="glyphicons.com" target="_blank">Glyphicons</a></small></p>
                     </div>
             </div>
         </div>

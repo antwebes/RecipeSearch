@@ -1,5 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
-    
+    {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset("bundles/recipe/css/custom.css") }}">
+    {% endblock %}
     
     {% block body %}
         <form action="{{ path("fos_user_security_check") }}" method="post">
@@ -9,29 +11,29 @@
 
                 <div class="login">
                   <div class="login-header">
-                    <h1>Login</h1>
+                    <h1>{{ 'layout.login'|trans }}</h1>
                   </div>
                     
                   <div class="login-form">
                     <div class="input-group margin-bottom-20">
-                        <label for="username"><strong>{{ 'User'|trans }}</strong></label>
+                        <label for="username"><strong>{{ 'security.login.username'|trans }}</strong></label>
                             <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
                     </div>
                     <div class="input-group margin-bottom-20">
-                        <label for="password"><strong>{{ 'Pass'|trans }}</strong></label>
+                        <label for="password"><strong>{{ 'security.login.password'|trans }}</strong></label>
                             <input type="password" id="password" name="_password" required="required" />
                     </div>
                     {% if error %}
                         <div id="error"><strong>{{ error.messageKey|trans(error.messageData, 'Error') }}</strong></div>
                     {% endif %}
-                    <input type="submit" id="_submit" name="_submit" value="{{ 'Login'|trans }}" />                    <br>                    
-                        <a class="sign-up" href=" {{ path ("fos_user_registration_register") }}">Sign Up!</a>
+                    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />                    <br>                    
+                        <a class="sign-up" href=" {{ path ("fos_user_registration_register") }}">{{ 'registration.submit'|trans }}</a>
                         <br>
-                        <h6 class="no-access">Can't access your account?</h6>
+                        <h6 class="no-access">{{ 'security.login.username' | trans }}</h6>
                   </div>
                 </div>
                 <div class="error-page">
-                  <div class="try-again">Error: Try again?</div>
+                    <div>Accede a nuestra página y solicita <a href="{{ path('pagina', { nombrePagina:'ayuda' } ) }}"> ayuda</a></div>
                 </div>
         </form>
     

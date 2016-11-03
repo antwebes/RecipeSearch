@@ -17,20 +17,21 @@
                                     <div class="tab">
                                         <div class="tab-content">
                                             <div class="tab-content-inner active" data-content="signup">
-                                                <h3 class="cursive-font">Busca la receta que necesitas</h3>
+                                                <h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3>
+                                                                                                         
                                                 <form action="#" autocomplete="off">
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
-                                                            <label for="activities">Ingredientes</label>
+                                                            <label for="activities">{% trans %}portada.ingredientes{% endtrans %}</label>
                                                             <p>
-                                                                <input type="text" id="myTextField" />
+                                                                <input type="text" id="myTextField" onFocus="if (this.value != '') this.value=''" />
                                                                 <div id="match">
 
                                                                 </div>
                                                             </p>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <h2><strong>Ingredientes escogidos</strong></h2>
+                                                            <h2><strong>{% trans %}portada.ingredientesescogidos{% endtrans %}</strong></h2>
                                                             <p>
                                                                 <ul id="elementos">
                                                                     
@@ -41,7 +42,7 @@
 
                                                     <div class="row form-group">
                                                         <div class="col-md-12">
-                                                            <input type="submit"  id="sendIngredients" disabled="true" class="btn btn-primary btn-block" onclick="location.href='{{ path('pagina', { portada: 'recipe' } ) }}'" value="Encuentra tu receta">
+                                                            <input type="submit"  id="sendIngredients" disabled="true" class="btn btn-primary btn-block" onclick="location.href='{{ path('pagina', { portada: 'recipe' } ) }}'" value="{% trans %} portada.encuentrareceta {%endtrans %}">
                                                         </div>
                                                     </div>
                                                 </form>	
@@ -61,33 +62,32 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
                         <h2 class="cursive-font primary-color">Recipe Searcher</h2>
-                        <p>La página que rompe con las páginas de recetas tradicionales, no busques una receta intentando tener los ingredientes 
-                            necesarios en tu casa, simplemente elige cuales quieres usar y nosotros te proponemos qué recetas podrías elaborar segun tus especificaciones</p>
+                        <p>{% trans %} portada.recipesearcher {% endtrans %}</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
                             <span class="counter js-counter" data-from="0" data-to="70" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Recetas disponibles</span>
+                            <span class="counter-label">{% trans %} portada.recetadisponible {% endtrans %}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
                             <span class="counter js-counter" data-from="0" data-to="43" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Ingredientes</span>
+                            <span class="counter-label">{% trans %} portada.ingredientes {% endtrans %}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
                             <span class="counter js-counter" data-from="0" data-to="3437" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Visitas</span>
+                            <span class="counter-label">{% trans %} portada.visitas {% endtrans %}</span>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
                             <span class="counter js-counter" data-from="0" data-to="2016" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">Año de comienzo</span>
+                            <span class="counter-label">{% trans %} portada.anno {% endtrans %}</span>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
             <div class="gtco-container text-center">
                 <div class="display-t">
                     <div class="display-tc">
-                        <h1>&ldquo; Comer para vivir y vivir para comer&rdquo;</h1>
+                        <h1>&ldquo; {% trans %} portada.frase {% endtrans %}&rdquo;</h1>
                         <p>&mdash; Henry Fielding</p>
                     </div>	
                 </div>

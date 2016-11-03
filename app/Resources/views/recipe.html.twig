@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
     {% block body %}        
-	<div class="gtco-section">
-		<div class="gtco-container">
+	<div class="gtco-section" id="recipebody">
+		<div  class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-					<h2 class="cursive-font primary-color">✔Búsqueda completada ✔</h2>
-					<p>Lista de nuestras recetas que coinciden en porcentaje a tu criterio de búsqueda específico siendo 100% la mayor coincidencia posible</p>
+					<h2 class="cursive-font primary-color">✔{% trans %} recipe.busqueda {% endtrans %} ✔</h2>
+					<p>{% trans %} recipe.porcentaje {% endtrans %}</p>
 				</div>
 			</div>
 			<div class="row">
@@ -13,7 +13,7 @@
 				
 				
 
-				<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="col-lg-4 col-md-4 col-sm-6" id="bloque">
 					<a href="{{ path('show_recipe', {"id":recipe.id} ) }}" class="fh5co-card-item">
 						<figure>
 							<div class="overlay"><i class="ti-plus"></i></div>

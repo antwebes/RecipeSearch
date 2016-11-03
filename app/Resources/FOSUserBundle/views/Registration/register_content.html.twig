@@ -1,50 +1,62 @@
 {% trans_default_domain 'FOSUserBundle' %}
-
+    {% block stylesheets %}
+                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/custom.css") }}">
+                <style>
+                    a:visited{
+                        color: white;
+                        text-decoration: none;
+                    }
+                    a:link{
+                        color:white;
+                        text-decoration: none;
+                    }
+                </style>
+    {% endblock %}
     <div class="login">
         <div class="login-header">
-            <h1>Register</h1>
+            <a href="{{ path ('fos_user_security_login') }}"><h1>{{ 'registration.submit'|trans }}</h1></a>
         </div>
-        <div class="login-form">
+        <div class="login-form" id="registerdiv">
             {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
 
             <label class="control-label required" for="fos_user_registration_form_username">
-                <h3>Username</h3>
+                <h3>{{ 'form.username'|trans }}</h3>
             </label>
-                <div class="username">            
+                <div class="username" id="r-name">            
                     {{ form_errors(form.username) }}
                     {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
                 </div>
                 <br>
 
             <label class="control-label required" for="fos_user_registration_form_email">
-                <h3>E-mail</h3> 
+                <h3>{{ 'form.email'|trans }}</h3> 
             </label>
-                <div class="email">
+                <div class="email" id="r-email">
                     {{ form_errors(form.email) }}
                     {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
                 </div>
                 <br>
 
             <label class="control-label required" for="fos_user_registration_form_plainPassword">
-                <h3>Password</h3> 
+                <h3>{{ 'form.password'|trans }}</h3> 
             </label>
-                <div class="password">
+                <div class="password" id="r-pass">
                     {{ form_errors(form.plainPassword.first) }}
                     {{ form_widget(form.plainPassword.first, {'attr': {'class': 'form-control'}}) }}
                 </div>
                 <br>
 
             <label class="control-label required" for="fos_user_registration_form_plainPassword">
-                <h3>Password confirmation</h3> 
+                <h3>{{ 'form.password_confirmation'|trans }}</h3> 
             </label>
-                <div class="password">
+                <div class="password" id="r-repass">
                     {{ form_errors(form.plainPassword.second) }}
                     {{ form_widget(form.plainPassword.second, {'attr': {'class': 'form-control'}}) }}
                 </div>
                 <br>
 
-            <div>
-                <input type="submit" value="{{ 'Register'|trans }}" />
+            <div id="r-register">
+                <input type="submit"  value="{{ 'layout.register'|trans }}" />
             </div>
         </div>
     </div>

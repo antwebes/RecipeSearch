@@ -1,0 +1,12 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset("bundles/recipe/css/custom.css") }}">
+{% endblock %}
+{% block body %}
+    
+    echo "<script>alert('¡Enhorabuena! \n Te has registrado en nuestra web'); window.location = "{{ path('portada', { nombrePagina:'/' } ) }}";</script>";
+
+
+
+{% endblock %}
