@@ -5,14 +5,14 @@
         <div class="gtco-container">
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
-                    <div id="gtco-logo">Recipe <a href="{{ path('portada', { nombrePagina:'/' } ) }}"><em>.Search</em></a></div>
+                    <div id="gtco-logo">Recipe <a href="{{ path('portada' ) }}"><em>.Search</em></a></div>
                 </div>
                 
                 <div class="col-xs-6  menu-1">
                     <ul>
                         <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'ayuda' } ) }}">{% trans %} navbar.ayuda {% endtrans %}</a></li>                                            
                         <li><a id="anavbar" href="{{ path('pagina', { nombrePagina:'sobre_nosotros' } ) }}">{% trans %} navbar.nosotros {% endtrans %}</a></li>
-                        <li class="btn-cta primary-color"><a href="{{ path('search_recipe', { nombrePagina: 'search' } ) }}"><span  id="linavbar">{% trans %} navbar.recetas {% endtrans %}</span></a></li>                         
+                        <li class="btn-cta primary-color"><a href="{{ path('search_recipe' ) }}"><span  id="linavbar">{% trans %} navbar.recetas {% endtrans %}</span></a></li>                         
         
                     </ul>                    
                 </div>

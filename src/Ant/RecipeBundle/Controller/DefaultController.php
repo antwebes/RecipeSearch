@@ -27,8 +27,9 @@
 
         
         /**
-         * @Route("/search", name="search_recipe")
-         * 
+         * @Route("/search", 
+         * name="search_recipe"
+         * )
          */
         public function searcherAction(){
             $em = $this->getDoctrine()->getManager();
@@ -60,7 +61,8 @@
         }
         
         /**
-        * @Route("/", name="portada")
+        * @Route("/",
+        * name="portada")
         */
         public function portadaAction(){
             $em = $this->getDoctrine()->getManager();
@@ -71,5 +73,16 @@
             return $this->render('portada.html.twig', array(
                 'recipe' => $recipe
                 ));
+        }
+        
+        public function counterAction(){
+            $em = $this->getDoctrine()->getManager();
+            $recipes = $em->getRepository('RecipeBundle:Recipe')->findAll();
+            $count = count($recipes);
+            $ingredients = $em->getRepository('RecipeBundle:Ingredient')->findAll();
+            $countIngredients = count($ingredients);
+            return $this->render('default/counters.html.twig', array(
+                'countsrecipe' => $count, 'countingredients' => $countIngredients
+            ));
         }
 }

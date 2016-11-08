@@ -1,0 +1,39 @@
+
+
+
+<div id="gtco-counter" class="gtco-section">
+    <div class="gtco-container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
+                <h2 class="cursive-font primary-color">Recipe Searcher</h2>
+                <p>{% trans %} portada.recipesearcher {% endtrans %}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+                <div class="feature-center">
+                    <span class="counter js-counter" data-from="0" data-to="{{ countsrecipe }}" data-speed="1500" data-refresh-interval="50">1</span>
+                    <span class="counter-label">{% trans %} portada.recetadisponible {% endtrans %}</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+                <div class="feature-center">
+                    <span class="counter js-counter" data-from="0" data-to={{ countingredients }} data-speed="3000" data-refresh-interval="50">1</span>
+                    <span class="counter-label">{% trans %} portada.ingredientes {% endtrans %}</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+                <div class="feature-center">
+                    <span class="counter js-counter" data-from="0" data-to="3437" data-speed="3500" data-refresh-interval="50">1</span>
+                    <span class="counter-label">{% trans %} portada.visitas {% endtrans %}</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
+                <div class="feature-center">
+                    <span class="counter js-counter" data-from="0" data-to="2016" data-speed="4000" data-refresh-interval="50">1</span>
+                    <span class="counter-label">{% trans %} portada.anno {% endtrans %}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -34,7 +34,7 @@
             $ingredientList = '<ul id="matchList">';
             foreach ($results as $result) {
                 $matchStringBold = preg_replace('/('.$data.')/i', '<strong>$1</strong>', $result['name']); // Replace text field input by bold one
-                $ingredientList .= '<li id="'.$result['name'].'">'.$matchStringBold.'</li>'; // Create the matching list - we put maching name in the ID too
+                $ingredientList .= '<li id="'.$result['name'].'" data-ingredient="'.$result['id'].'">'.$matchStringBold.'</li>'; // Create the matching list - we put maching name in the ID too
             }
             $ingredientList .= '</ul>';
 
@@ -42,5 +42,7 @@
             $response->setData(array('ingredientList' => $ingredientList));
             return $response;
         }
+        
+        
     }
 

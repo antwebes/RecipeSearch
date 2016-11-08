@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
             {% block javascripts %}
                 <script> var ROOT_URL = "{{ url('portada')}}"; </script>
-                <script src="{{ asset('bundles/recipe/js/autocomplete-ingredients.js') }}"></script>                 
+                    {% javascripts '@RecipeBundle/Resources/public/js/autocomplete-ingredients.js' %}
+                        <script src="{{ asset_url }}"></script>                
+                    {%  endjavascripts %}
             {% endblock %}
     {% block body %}
         <div class="gtco-loader"></div>
@@ -26,7 +28,7 @@
                                                             <p>
                                                                 <input type="text" id="myTextField" onFocus="if (this.value != '') this.value=''" />
                                                                 <div id="match">
-
+                                                                    <!-- Lista ingredientes L -->
                                                                 </div>
                                                             </p>
                                                         </div>
@@ -34,7 +36,7 @@
                                                             <h2><strong>{% trans %}portada.ingredientesescogidos{% endtrans %}</strong></h2>
                                                             <p>
                                                                 <ul id="elementos">
-                                                                    
+                                                                    <!-- Lista ingredientes R -->
                                                                 </ul>
                                                             </p>
                                                         </div>
@@ -57,42 +59,7 @@
             </div>
 	</header>
 
-        <div id="gtco-counter" class="gtco-section">
-            <div class="gtco-container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-                        <h2 class="cursive-font primary-color">Recipe Searcher</h2>
-                        <p>{% trans %} portada.recipesearcher {% endtrans %}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="70" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">{% trans %} portada.recetadisponible {% endtrans %}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="43" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">{% trans %} portada.ingredientes {% endtrans %}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="3437" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">{% trans %} portada.visitas {% endtrans %}</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <span class="counter js-counter" data-from="0" data-to="2016" data-speed="5000" data-refresh-interval="50">1</span>
-                            <span class="counter-label">{% trans %} portada.anno {% endtrans %}</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-	</div>
+        {{ render(controller('RecipeBundle:Default:counter')) }}
         
 	<div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
             <div class="overlay"></div>

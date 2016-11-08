@@ -1,14 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 14-Oct-2016, 12:06:57
-    Author     : osboxes
-*/
-
-
 button, input, optgroup, select, textarea {
     color: #1C1C1C;
     font: inherit;
@@ -27,11 +16,11 @@ div#match{
 }
 
 a#anavbar {
-    color: #265a88;
+    color: #FF8000;
 }
 
 span#linavbar{
-    color: #265a88;
+    color: #FF8000;
 }
 
 #imagerecipe{
