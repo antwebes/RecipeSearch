@@ -25,10 +25,11 @@
 							<p><span class="price cursive-font">$23.10</span></p>
 						</div>
 					</a>
+                                    <div class="navigation">
+                                        {{ knp_pagination_render(recipes) }}
+                                    </div>
 				</div>
-                                <div class="navigation">
-                                    {{ knp_pagination_render(recipes) }}
-                                </div>
+                                
 
 				
                                 {% endfor %}

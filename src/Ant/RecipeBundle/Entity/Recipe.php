@@ -125,6 +125,10 @@
         function getImage() {
             return $this->image;
         }
+        
+        function getUpdatedAt() {
+            return $this->updatedAt;
+        }
 
         function getTime() {
             return $this->time;

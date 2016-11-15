@@ -74,6 +74,52 @@ vich_uploader:
             uri_prefix:         %app.path.recipe_images%
             upload_destination: %kernel.root_dir%/../web/uploads/images/recipes
             
+fos_elastica:
+    clients:
+        default: { host: localhost, port: 9200 }
+    indexes:
+        finder: ~
+        app:
+            types:
+                Ingredient:
+                    mappings:
+                        id: ~
+                        name: ~
+                        createdAt: ~
+                    persistence:
+                        driver: orm
+                        model:  Ant\RecipeBundle\Entity\Ingredient
+                        
+                Recipe:
+                    mappings:
+                        id: ~
+                        name: ~
+                        descripcion: ~
+                        elaboracion: ~
+                        time: ~
+                        image: ~
+                        imageFile: ~
+                        updatedAt: ~
+                        category: ~
+                        slug: ~
+                        pathVideo: ~
+                        diners: ~
+                    persistence:
+                        driver: orm
+                        model:  Ant\RecipeBundle\Entity\Recipe 
+                        
+                RecipeIngredient:
+                    mappings:
+                        id: ~
+                        quantity: ~
+                        mandatory: ~
+                        ingredient: ~
+                        recipe: ~
+                    persistence:
+                        driver: orm
+                        model:  Ant\RecipeBundle\Entity\RecipeIngredient
+
+                        
             
 liip_imagine:
     resolvers:

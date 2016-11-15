@@ -1,6 +1,6 @@
 $(document).ready(function(){
     elementosDerecha = [];
-     $("#myTextField").on('keyup', function() { 
+     $("#myTextField").on('keyup', function() {                           
              var input = $(this).val(); 
              if ( input.length >= 2 ) { 
                      var data = {input: input}; 
@@ -45,6 +45,7 @@ $(document).ready(function(){
                                      $('#match').empty().append($ul); 
                                      $('#matchList li').on('click', function() {
                                              $('#match').text('');
+                                             $('#sendIngredients').prop('disabled', false);
                                              elementosDerecha.push($(this).text());
                                              $('#elementos').append('<li><span> <i class="removeIngredient fa fa-trash"></i> '+$(this).text()+'</span></li>');
                                      });     
@@ -66,6 +67,12 @@ $(document).ready(function(){
             $('#myTextField').val($(this).text()); 
             $("#sendIngredients").prop('disabled', false);
     });
+    
+    
+    $(document).on('submit','#formSearch',function(event){
+        $("#queryParameter").val(elementosDerecha.join());
+    });
+
     
  });
 

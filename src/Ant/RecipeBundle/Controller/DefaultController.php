@@ -18,27 +18,12 @@
         * )
         */
         public function pageAction($nombrePagina = 'ayuda'){
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();                                               
             
-
             return $this->render('sitio/'.$nombrePagina.'.html.twig');
         }
 
 
-        
-        /**
-         * @Route("/search", 
-         * name="search_recipe"
-         * )
-         */
-        public function searcherAction(){
-            $em = $this->getDoctrine()->getManager();
-            $recipes = $em->getRepository('RecipeBundle:Recipe')->findAll();
-            
-            return $this->render('recipe.html.twig', array(
-                'recipes' => $recipes
-            ));
-        }
 
 
         /**

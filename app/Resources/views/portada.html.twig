@@ -21,7 +21,7 @@
                                             <div class="tab-content-inner active" data-content="signup">
                                                 <h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3>
                                                                                                          
-                                                <form action="#" autocomplete="off">
+                                                <form id="formSearch" action="{{ path('search_recipe') }}" type="GET" autocomplete="off">
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
                                                             <label for="activities">{% trans %}portada.ingredientes{% endtrans %}</label>
@@ -40,11 +40,12 @@
                                                                 </ul>
                                                             </p>
                                                         </div>
-                                                    </div>                                                                                                        
+                                                    </div> 
+                                                    <input type="hidden" name="q" id="queryParameter">
 
                                                     <div class="row form-group">
                                                         <div class="col-md-12">
-                                                            <input type="submit"  id="sendIngredients" disabled="true" class="btn btn-primary btn-block" onclick="location.href='{{ path('pagina', { portada: 'recipe' } ) }}'" value="{% trans %} portada.encuentrareceta {%endtrans %}">
+                                                            <input type="submit"  id="sendIngredients" disabled="true" class="btn btn-primary btn-block" value="{% trans %} portada.encuentrareceta {%endtrans %}">
                                                         </div>
                                                     </div>
                                                 </form>	
