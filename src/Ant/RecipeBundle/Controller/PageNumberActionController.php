@@ -29,7 +29,7 @@
             
             ld($parameterq);
             
-            $boolQuery = new \Elastica\Query\BoolQuery();
+            /*$boolQuery = new \Elastica\Query\BoolQuery();
             $fieldQuery = new \Elastica\Query\Match();
             $fieldQuery->setFieldQuery('ingredient', $parameterq[0]);
             $fieldSecondQuery = new \Elastica\Query\Match();
@@ -37,9 +37,9 @@
             $boolQuery->addMust($fieldQuery);
             $boolQuery->addMust($fieldSecondQuery); 
             
-            $data = $finderRI->find($boolQuery);
+            $data = $finderRI->find($boolQuery);*/
             
-            /*$boolQuery = new \Elastica\Query\BoolQuery();
+            $boolQuery = new \Elastica\Query\BoolQuery();
             $recipeQuery = new \Elastica\Query\Match();
             $recipeQuery->setFieldQuery('fos_elastica.finder.app.RecipeIngredient', array($request));
             $recipeQuery->setFieldParam('fos_elastica.finder.app.Ingredient', 'analyzer', 'custom_analyzer');
@@ -49,10 +49,10 @@
             $query->setPath('businessAddress');
             $query->setQuery($boolQuery);
             // pass the nested query to your finder
-            $finderRI->find($query);*/
-            
+            $finderRI->find($query);
             
 /* ////////////////////////////////////////////////////////////////////////////////////// */ 
+            
             foreach($data as $ob){
                 array_push($array, $ob->getRecipe()->getId());
             }
