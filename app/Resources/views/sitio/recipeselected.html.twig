@@ -8,7 +8,12 @@
                     <div class="col-md-12 ">
                         <div class="col-xs-4"  id="ingredientrecipe">
                             <h3>{{ recipe.descripcion }}</h3> <br> <br>
-                            <p>##Ingredientes##</p>
+                            <h2>Ingredientes</h2>
+                            <ul>
+                                {%for recipeingredient in recipe.recipeingredients %}
+                                    <li>{{ recipeingredient.ingredient.name}}</li>
+                                {%endfor%}
+                            </ul>                            
                         </div>
                         <div id="imagerecipe" class="col-xs-8">
                             {% set runtimeConfig = {"thumbnail": {"size": [440, 440] }} %} 
@@ -27,13 +32,12 @@
                     </div>
                     <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <video src="{{ recipe.pathvideo }}" controls>
-                                Tu navegador no implementa el contenido <code>video</code></video>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/hknVVMfMzPo" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <button>##Imprimir PDF##</button>
+                            <a href="{{ path('show_recipe_pdf', {"id":recipe.id} ) }}"> Guardar PDF</a> 
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">

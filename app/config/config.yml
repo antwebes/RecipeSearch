@@ -73,12 +73,19 @@ vich_uploader:
         recipe_images:
             uri_prefix:         %app.path.recipe_images%
             upload_destination: %kernel.root_dir%/../web/uploads/images/recipes
-            
+       
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     /usr/bin/wkhtmltopdf
+        options:    []
             
 liip_imagine:
     resolvers:
         default:
             web_path: ~
+
+
 
     filter_sets:
         cache: ~

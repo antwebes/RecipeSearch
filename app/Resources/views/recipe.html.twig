@@ -22,13 +22,14 @@
 						<div class="fh5co-text">
 							<h2>{{ recipe.name }}</h2>
 							<p>{{ recipe.descripcion | truncate(50, true)}} </p>
-							<p><span class="price cursive-font">$23.10</span></p>
+							<p><span class="price cursive-font">Tiempo: {{ recipe.time }}'</span></p>
 						</div>
 					</a>
-				</div>
                                 <div class="navigation">
                                     {{ knp_pagination_render(recipes) }}
                                 </div>
+				</div>
+                                
 
 				
                                 {% endfor %}
