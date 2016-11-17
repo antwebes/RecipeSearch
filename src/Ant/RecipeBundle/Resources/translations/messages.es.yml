@@ -7,7 +7,7 @@ portada:
     recetadisponible: Recetas disponibles
     visitas: Visitas registradas
     anno: Año de comienzo
-    frase: Comer para vivir vivir para comer
+    frase: La familia, los amigos y la comida son lo más importante.
     
 footer: 
     social: Búscanos
@@ -26,8 +26,8 @@ navbar:
     administrar: Administrar página
     
 recipe:
-    busqueda: Búsqueda completada
-    porcentaje: Lista de nuestras recetas que coinciden en porcentaje a tu criterio de búsqueda específico siendo 100% la mayor coincidencia posible
+    busqueda: Recetas encontradas
+    porcentaje: Aquí te mostramos una serie de recetas que pueden coincidir con lo que buscas, esperamos haberte sido de ayuda, no dejes de usar RecipeSearcher.
 
 login:
     accesodenegado: ¿No puedes acceder a tu cuenta?

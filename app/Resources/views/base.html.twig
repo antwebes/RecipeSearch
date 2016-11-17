@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+    
+
+    
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <META name="description" content="En nuestra web RecipeSearcher tan solo deberás basarte en tus ingredientes. Introduce los ingredientes de los que dispones para encontrar la receta que más se adapte a ti.">
         <META name="keywords" content="RECIPE SEARCH RECIPESEARCH BUSCADOR RECETAS INGREDIENTE INGREDIENTES RECETA COCINA">
@@ -42,22 +46,30 @@
                 <meta name="msapplication-TileColor" content="#ffffff">
                 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
                 <meta name="theme-color" content="#ffffff">
+                {% stylesheets "@RecipeBundle/Resources/public/css/custom.css" %}
+                    <link rel="stylesheet" href="{{ asset(asset_url) }}">
+                {% endstylesheets %}
                 {# Custom files #}
-                <link rel="stylesheet" href="{{ asset("bundles/recipe/css/custom.css") }}">
-                <script src="{{ asset("bundles/recipe/js/modernizr-2.6.2.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/jquery.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/jquery.easing.1.3.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/bootstrap.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/jquery.waypoints.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/owl.carousel.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/jquery.countTo.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/jquery.stellar.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/jquery.magnific-popup.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/magnific-popup-options.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/moment.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/bootstrap-datetimepicker.min.js") }}"></script>
-                <script src="{{ asset("bundles/recipe/js/main.js") }}"></script>
             {% endblock %}
+
+
+                {% javascripts "@RecipeBundle/Resources/public/js/autocomplete-ingredients.js"
+                   "@RecipeBundle/Resources/public/js/modernizr-2.6.2.min.js"
+                   "@RecipeBundle/Resources/public/js/jquery.min.js"
+                   "@RecipeBundle/Resources/public/js/jquery.easing.1.3.js"
+                   "@RecipeBundle/Resources/public/js/bootstrap.min.js"
+                   "@RecipeBundle/Resources/public/js/jquery.waypoints.min.js"
+                   "@RecipeBundle/Resources/public/js/owl.carousel.min.js"
+                   "@RecipeBundle/Resources/public/js/jquery.countTo.js"
+                   "@RecipeBundle/Resources/public/js/jquery.stellar.min.js"
+                   "@RecipeBundle/Resources/public/js/jquery.magnific-popup.min.js"
+                   "@RecipeBundle/Resources/public/js/moment.min.js"
+                   "@RecipeBundle/Resources/public/js/magnific-popup-options.js"
+                   "@RecipeBundle/Resources/public/js/bootstrap-datetimepicker.min.js"
+                   "@RecipeBundle/Resources/public/js/main.js"
+                %}
+                    <script src="{{ asset(asset_url) }}"></script>    
+                {% endjavascripts %}
     </head>
     <body id="{% block id '' %}">
         <div id="page">

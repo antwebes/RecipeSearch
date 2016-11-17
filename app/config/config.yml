@@ -223,6 +223,7 @@ easy_admin:
         brand_color:  'orange'
         color_scheme: 'light'
     
-        
+assetic:
+    use_controller: true
 
             

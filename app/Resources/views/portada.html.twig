@@ -8,19 +8,18 @@
     {% block body %}
         <div class="gtco-loader"></div>
 	
-	<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+	<header id="gtco-header" role="banner">
             <div class="overlay"></div>
             <div class="gtco-container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-0 text-left">
-                        <div class="row row-mt-15em">                            
+                    <div class="col-md-10 col-md-offset-0 text-left" >
+                        <div class="row row-mt-15em" id="formbox">                            
                             <div class="col-md-12 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
                                 <div class="form-wrap">
                                     <div class="tab">
                                         <div class="tab-content">
                                             <div class="tab-content-inner active" data-content="signup">
-                                                <h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3>
-                                                                                                         
+                                                <div id="titulocaja"><h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3></div
                                                 <form id="formSearch" action="{{ path('search_recipe') }}" type="GET" autocomplete="off">
                                                     <div class="row form-group">
                                                         <div class="col-md-6">
@@ -32,13 +31,16 @@
                                                                 </div>
                                                             </p>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <h2><strong>{% trans %}portada.ingredientesescogidos{% endtrans %}</strong></h2>
-                                                            <p>
-                                                                <ul id="elementos">
-                                                                    <!-- Lista ingredientes R -->
+                                                        <div class="col-md-6" id="recogeringredientes">
+                                                            <h3 class="cursive-font">{% trans %}portada.ingredientesescogidos{% endtrans %}</h3>
+                                                            
+                                                                <ul id="ulingredientes">
+                                                                    Ingredientes seleccionados
+                                                                    <ul id="elementos">
+                                                                        <!-- Lista ingredientes R -->
+                                                                    </ul>
                                                                 </ul>
-                                                            </p>
+                                                            
                                                         </div>
                                                     </div>       
                                                     <input type="hidden" name="q" id="queryParameter">
@@ -62,8 +64,7 @@
 
         {{ render(controller('RecipeBundle:Default:counter')) }}
         
-	<div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg)"  data-stellar-background-ratio="0.5">
-            <div class="overlay"></div>
+	<div class="gtco-cover gtco-cover-sm" id="gtco-cover">
             <div class="gtco-container text-center">
                 <div class="display-t">
                     <div class="display-tc">

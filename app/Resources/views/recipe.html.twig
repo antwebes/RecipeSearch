@@ -9,31 +9,23 @@
 				</div>
 			</div>
 			<div class="row">
-                                {% for recipe in recipes %}
-				
-				
-
+                                {% for recipe in recipes %}								
 				<div class="col-lg-4 col-md-4 col-sm-6" id="bloque">
 					<a href="{{ path('show_recipe', {"id":recipe.id} ) }}" class="fh5co-card-item">
-						<figure>
-							<div class="overlay"><i class="ti-plus"></i></div>
+							<div class="overlay" id="imagencomida"></div>
 							<img src="{{ asset('uploads/images/recipes/' ~ recipe.image) | imagine_filter('new_thumb') }}" alt="{{ recipe.name }}" class="img-responsive">
-						</figure>
 						<div class="fh5co-text">
 							<h2>{{ recipe.name }}</h2>
 							<p>{{ recipe.descripcion | truncate(50, true)}} </p>
 							<p><span class="price cursive-font">Tiempo: {{ recipe.time }}'</span></p>
 						</div>
-					</a>
-                                <div class="navigation">
-                                    {{ knp_pagination_render(recipes) }}
-                                </div>
-				</div>
-                                
-
-				
+					</a>                                
+				</div>                                				
                                 {% endfor %}
 			</div>
+                        <div class="navigation">
+                                    {{ knp_pagination_render(recipes) }}
+                        </div>
 		</div>
 	</div>
         

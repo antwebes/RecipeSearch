@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $( "#myTextField" ).focus();
     elementosDerecha = [];
      $("#myTextField").on('keyup', function() {                           
              var input = $(this).val(); 
