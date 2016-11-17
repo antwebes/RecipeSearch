@@ -12,8 +12,9 @@
                                 {% for recipe in recipes %}								
 				<div class="col-lg-4 col-md-4 col-sm-6" id="bloque">
 					<a href="{{ path('show_recipe', {"id":recipe.id} ) }}" class="fh5co-card-item">
-							<div class="overlay" id="imagencomida"></div>
+						<figure>
 							<img src="{{ asset('uploads/images/recipes/' ~ recipe.image) | imagine_filter('new_thumb') }}" alt="{{ recipe.name }}" class="img-responsive">
+						</figure>
 						<div class="fh5co-text">
 							<h2>{{ recipe.name }}</h2>
 							<p>{{ recipe.descripcion | truncate(50, true)}} </p>
