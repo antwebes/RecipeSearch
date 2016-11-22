@@ -26,24 +26,20 @@
                 <div class="row">                    
                     <div class="col-md-12 col-sm-3 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center" id="featurelab">
-                            <span class="counter-label">{{ recipe.elaboracion }}</span>
+                            {{ recipe.elaboracion }}
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
+                    <div class="col-md-6 col-sm-3 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
                             <iframe width="400" height="250" src="https://www.youtube.com/embed/{{ recipe.pathvideo }}" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
+                    <div class="col-md-6 col-sm-3 animate-box" data-animate-effect="fadeInUp">
                         <div class="feature-center">
-                            <a href="{{ path('show_recipe_pdf', {"id":recipe.id} ) }}"> Guardar PDF</a> 
+                            <button><a href="{{ path('show_recipe_pdf', {"id":recipe.id} ) }}"> Guardar como PDF</a> </button>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-3 animate-box" data-animate-effect="fadeInUp">
-                        <div class="feature-center">
-                            <button>##Enviar##</button>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
 	</div>

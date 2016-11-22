@@ -13,7 +13,7 @@
         * @Route(
         * "/sitio/{nombrePagina}/",
         * defaults={ "nombrePagina" = "ayuda" },
-        * requirements={ "nombrePagina" = "ayuda|sobre_nosotros" },
+        * requirements={ "nombrePagina" = "postres|sobre_nosotros" },
         * name="pagina"
         * )
         */

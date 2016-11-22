@@ -25,6 +25,7 @@
                 $request->query->getInt('page', 1),
                 3
             );
+            
     
             return $this->render('recipe.html.twig', array('recipes' => $pagination));
         }

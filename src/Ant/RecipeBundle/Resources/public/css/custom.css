@@ -24,12 +24,26 @@ span#linavbar{
 }
 
 #imagerecipe{
-    float: right
+    float: right;
+    font-family: 'Shrikhand';
 }
 
 #ingredientrecipe{
     float: left;
-    color: #ff8000;
+    color: gray;
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+#ingredientrecipe ul{
+    list-style: none;
+}
+
+#ingredientrecipe  h3{
+    font-family: "Kaushan Script", cursive;
+}
+
+#ingredientrecipe  h2{
+    font-family: "Gloria Hallelujah", cursive;
 }
 
 .sinpadding[class*="col-"]{
@@ -265,9 +279,100 @@ div#gtco-recipe{
 
 div#featurelab{
     margin-top: 50px;
+    font-family: 'Satisfy', cursive;
+    font-size: 1.5em;
+    
 }
 
 #recipecontainer h2{
     vertical-align: middle;
     text-align: center;
 }
+
+#frase h1{
+    font-family: "Kaushan Script", cursive;;
+}
+
+#frase p{
+    font-family: "Kaushan Script", cursive;
+}
+
+#subscribe h2{
+    color: gray;
+}
+
+#subscribe p{
+    color:grey;
+}
+
+.main {
+	width:90%;
+	max-width:1000px;
+	margin:20px auto;
+}
+ 
+.slides {
+	width:100%;
+}
+ 
+.slides img {
+	width:100%;
+}
+ 
+.slidesjs-pagination {
+	background:#424242;
+	list-style:none;
+	overflow:hidden;
+}
+ 
+.slidesjs-pagination li {
+	float:left;
+}
+ 
+.slidesjs-pagination li a {
+	display:block;
+	padding:10px 20px;
+	color:#fff;
+	text-decoration:none;
+}
+ 
+.slidesjs-pagination li a:hover {
+	background:#000;
+}
+ 
+.slides .active {
+	background:#000;
+}
+ 
+.slidesjs-navigation{
+	background:#000;
+	color:#fff;
+	text-decoration:none;
+	display:inline-block;
+	padding:13.5px 20px;
+	float:right;
+}
+
+
+/*
+#slide1_container {
+  width:450px;
+  height:281px;
+  overflow:hidden; 
+  margin:0 auto;
+}
+#slide1_images {
+  
+  width:1800px;
+
+  -webkit-transition:all 1.0s ease-in-out;
+  -moz-transition:all 1.0s ease-in-out;
+  -o-transition:all 1.0s ease-in-out;
+  transition:all 1.0s ease-in-out;
+}
+#slide1_images img {
+  padding:0;
+  margin:0;
+  float:left; 
+}
+*/
