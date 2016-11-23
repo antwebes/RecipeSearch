@@ -8,6 +8,23 @@ imports:
 parameters:
     locale: es
     app.path.recipe_images: /uploads/images/recipe
+    
+mremi_contact:
+    store_data:      false
+    contact_class:   Mremi\ContactBundle\Model\Contact
+    
+    form:
+        type:        mremi_contact
+        name:        contact_form
+        validation_groups: [Default]
+        subject_provider:  mremi_contact.subject_provider.noop
+    email:
+        mailer: mremi_contact.mailer.twig_swift
+        from:
+            - { address: searcherrecipe@gmail.com }
+        to:   
+            - { address: antoniopena18@hotmail.es }
+        template: MremiContactBundle:Contact:email.txt.twig
   
 framework:
     #esi:             ~
@@ -30,7 +47,7 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true    
-    translator: {fallbacks: ["%locale%"] }
+    translator: ~
 
 # Twig Configuration
 twig:

@@ -1,4 +1,19 @@
 {% extends 'base.html.twig' %}
+    {% block metatags %} 
+        <script type="application/ld+json">
+            
+            {
+                "@type": "Recipe",
+                "name": "{{ recipe.name }}",
+                "image": "{{ asset('uploads/images/recipes/' ~ recipe.image) | imagine_filter('my_thumb') }}",                
+                "totalTime": "Tiempo: {{ recipe.time }}",
+                "description": "{{ recipe.descripcion }}"
+            }
+        </script>
+    {% endblock %}
+    
+    {% block title %}{{ recipe.name }}{% endblock %}
+    
     {% block body %}
         <div id="gtco-recipe" class="gtco-section">
             <div class="gtco-container">                                
