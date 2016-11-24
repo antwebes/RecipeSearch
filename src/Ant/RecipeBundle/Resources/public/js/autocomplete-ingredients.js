@@ -1,6 +1,9 @@
 $(document).ready(function(){
     $( "#myTextField" ).focus();
     elementosDerecha = [];
+    firstli = null;
+    
+    
      $("#myTextField").on('keyup', function() {                           
              var input = $(this).val(); 
              if ( input.length >= 2 ) { 
@@ -11,16 +14,23 @@ $(document).ready(function(){
                              data: data, 
                              dataType: 'json', 
                              timeout: 3000,
-                             success: function(response){ 
+                             success: function(response){
+                                 //accedemos a los datos
                                      var $ul = $(response.ingredientList);
-                                     var $ulElementos = $('#elementos')
+                                     // guardamos la caja de la derecha
+                                     var $ulElementos = $('#elementos');
                                      
+                                     //inicializamos la variable para guardar los datos
                                      var elementos = [];
+                                     
+                                    //recorremos todos los elementos que en parte del html de la derecha
                                      
                                      $ulElementos.children().each(function(){
                                          elementos.push($(this).text());
                                      });
                                      
+                                     // recorremos la respuesta de la llamada ajax que son los ingrendientes
+                                     // para eliminar los elementos que ya tengamos metidos en la parte de la derecha
                                      $ul.children().each(function(){
                                          for(i=0; i<elementos.length; i++){
                                             if($(this).text().trim() === elementos[i].trim()){                                                
@@ -30,26 +40,18 @@ $(document).ready(function(){
                                         }
                                      });
                                      
+                                     console.log('success llamada ajax');
+                                    //vaciamos la caja de la izquierda y metemos la respuesta que viene de la llamada ajax
+                                    emptySuggestionIngredients();
+                                     $('#match').append($ul);
                                      
-                                     
-                                     /*$ul.each(function(){
-                                         var $this = $(this);
-                                     });*/
-                                     
-                                     /*$ul.children().each(function(){
-                                         //$(this).remove();
-                                         if($(this).text() == 'Pechuga de pollo'){
-                                             $(this).remove();
-                                         }
-                                     })*/
-                                     
-                                     $('#match').empty().append($ul); 
-                                     $('#matchList li').on('click', function() {
-                                             $('#match').text('');
-                                             $('#sendIngredients').prop('disabled', false);
-                                             elementosDerecha.push($(this).text());
-                                             $('#elementos').append('<li><span> <i class="removeIngredient fa fa-trash"></i> '+$(this).text()+'</span></li>');
-                                     });     
+                                     firstli = $("#match li:first");
+//                                      $('#recogeringredientes').html("<h1 style='color:white;'>"+firstli.html()+"</h1>");
+                                    $('#matchList li').on('click', function() {
+                                        insertElementInDerecha($(this).text());
+                                    });                          
+
+                                                
                              },
                              error: function() { 
                                      $('#match').text('Problem!');
@@ -59,22 +61,65 @@ $(document).ready(function(){
                      $('#match').text(''); 
              }
      });
-     $(document).on('click','.removeIngredient', function(){
-         
-            $(this).parent().remove();
-        });
-     $('#matchList li').on('click', function() {
-            $(this).attr("data-id");
-            $('#myTextField').val($(this).text()); 
-            $("#sendIngredients").prop('disabled', false);
+     
+    function emptySuggestionIngredients(){
+        console.log('vacia sugerencias');
+        $('#match').empty();
+    }
+     
+    
+    $("#igr input").keypress(function (e) {
+        if (e.keyCode == 13) {
+            console.log('presiono enter');
+           insertElementInDerecha(firstli.html());
+        }
     });
+     
+    function insertElementInDerecha(text){
+            console.log('inserta en la derecha');
+//        $('#match').text('');
+        $('#sendIngredients').prop('disabled', false);
+        elementosDerecha.push(text);
+        $('#elementos').append('<li><span> <i class="removeIngredient fa fa-trash"></i> ' + text + '</span></li>');
+        emptySuggestionIngredients();
+    };
+
     
-    
+    $(document).on('click','.removeIngredient', function(){
+         
+        $(this).parent().remove();
+    });
+        
+    $('#matchList li').on('click', function() {
+        $(this).attr("data-id");
+        $('#myTextField').val($(this).text()); 
+        $("#sendIngredients").prop('disabled', false);
+    });
+        
     $(document).on('submit','#formSearch',function(event){
         $("#queryParameter").val(elementosDerecha.join());
     });
+    
+    
+    
+                    
+
+
+        
+        
+});   
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
  
-	$(function(){
+	/*$(function(){
             $(".slides").slidesjs({
                 play: {
                     active: true,
@@ -95,13 +140,18 @@ $(document).ready(function(){
                 }
             });
         });
-        
-        
-        
 
-    
-        
- });
+
+
+
+        $("#igr input").keypress(function (e) {
+            if (e.keyCode == 13) {
+                $("#matchlist").first().children().addClass("highlight");
+            }
+        });
+    });
+*/
+
  
 
 
@@ -144,12 +194,4 @@ $(document).ready(function(){
          
             $(this).parent().remove();
     });
-    $('#matchList li').on('click', function() {
-            $(this).attr("data-id");
-            $('#myTextField').val($(this).text()); 
-            $('#match').text('');
-            $('#elementos').append('<li><i class="removeIngredient fa fa-trash"></i> <span id="data-id">'+$(this).text()+'</span></li>');
-            $("#sendIngredients").prop('disabled', false);
-    });   
- });
 */

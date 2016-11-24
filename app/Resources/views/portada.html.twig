@@ -1,10 +1,4 @@
 {% extends 'base.html.twig' %}
-            {% block javascripts %}
-                <script> var ROOT_URL = "{{ url('portada')}}"; </script>
-                    {% javascripts '@RecipeBundle/Resources/public/js/autocomplete-ingredients.js' %}
-                        <script src="{{ asset_url }}"></script>                
-                    {%  endjavascripts %}
-            {% endblock %}
     {% block body %}
         <div class="gtco-loader"></div>
 	
@@ -22,7 +16,7 @@
                                                 <div id="titulocaja"><h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3></div
                                                 <form id="formSearch" action="{{ path('search_recipe') }}" type="GET" autocomplete="off">
                                                     <div class="row form-group">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-6" id="igr">
                                                             <label for="activities">{% trans %}portada.ingredientes{% endtrans %}</label>
                                                             <p>
                                                                 <input type="text" id="myTextField" onFocus="if (this.value != '') this.value=''" />
