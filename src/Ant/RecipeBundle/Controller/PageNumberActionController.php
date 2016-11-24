@@ -27,13 +27,12 @@
             $parameter = $request->get('q');
             $parameterq = explode(',', $parameter);
             
-            ld($parameterq);
             
             $boolQuery = new \Elastica\Query\BoolQuery();
             $fieldQuery = new \Elastica\Query\Match();
             $fieldQuery->setFieldQuery('ingredient', $parameterq[0]);
             $fieldSecondQuery = new \Elastica\Query\Match();
-            $fieldSecondQuery->setFieldQuery('ingredient', $parameterq[1]);
+            $fieldSecondQuery->setFieldQuery('ingredient', $parameterq[0]);
             $boolQuery->addMust($fieldQuery);
             $boolQuery->addMust($fieldSecondQuery); 
             
