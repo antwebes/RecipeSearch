@@ -1,0 +1,7 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+   echo "<script>alert('¡Enhorabuena! \n Te has registrado en nuestra web'); window.location = "{{ path('portada', { nombrePagina:'/' } ) }}";</script>";
+{% endblock fos_user_content %}

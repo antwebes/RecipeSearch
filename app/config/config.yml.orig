@@ -90,13 +90,14 @@ vich_uploader:
         recipe_images:
             uri_prefix:         %app.path.recipe_images%
             upload_destination: %kernel.root_dir%/../web/uploads/images/recipes
-
+<<<<<<< HEAD
+       
 knp_snappy:
     pdf:
         enabled:    true
         binary:     /usr/bin/wkhtmltopdf
         options:    []
-
+=======
             
 fos_elastica:
     clients:
@@ -143,7 +144,8 @@ fos_elastica:
                         driver: orm
                         model:  Ant\RecipeBundle\Entity\RecipeIngredient
 
-
+                        
+>>>>>>> elastic_serch_fix
             
 liip_imagine:
     resolvers:

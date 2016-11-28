@@ -30,12 +30,15 @@
         "egeloen/ckeditor-bundle": "^4.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "willdurand/propel-typehintable-behavior": "^1.0",
+<<<<<<< HEAD
         "friendsofsymfony/elastica-bundle": "~2.0",
         "knplabs/knp-snappy-bundle": "~1.4",
         "vich/uploader-bundle": "^1.3",
         "white-october/pagerfanta-bundle": "^1.0",
-        "mremi/contact-bundle": "^1.3",
+        "mremi/contact-bundle": "^1.3"
+=======
         "friendsofsymfony/elastica-bundle": "~3.0"
+>>>>>>> elastic_serch_fix
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",

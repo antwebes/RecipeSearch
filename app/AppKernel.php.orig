@@ -26,9 +26,13 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+<<<<<<< HEAD
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new Mremi\ContactBundle\MremiContactBundle(),
+            
+=======
             new FOS\ElasticaBundle\FOSElasticaBundle(),
+>>>>>>> elastic_serch_fix
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -13,7 +13,12 @@
                                     <div class="tab">
                                         <div class="tab-content">
                                             <div class="tab-content-inner active" data-content="signup">
-                                                <div id="titulocaja"><h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3></div>
+<<<<<<< HEAD
+                                                <div id="titulocaja"><h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3></div
+=======
+                                                <h3 class="cursive-font"> {% trans %} portada.busqueda {% endtrans %}</h3>
+                                                                                                         
+>>>>>>> elastic_serch_fix
                                                 <form id="formSearch" action="{{ path('search_recipe') }}" type="GET" autocomplete="off">
                                                     <div class="row form-group">
                                                         <div class="col-md-6" id="igr">
@@ -32,13 +37,24 @@
                                                                     Ingredientes seleccionados
                                                                     <ul id="elementos">
                                                                         <!-- Lista ingredientes R -->
-                                                                </ul>                                                            
+                                                                    </ul>
+                                                                </ul>
+                                                            
                                                         </div>
+<<<<<<< HEAD
                                                     </div>       
+=======
+                                                    </div> 
+>>>>>>> elastic_serch_fix
                                                     <input type="hidden" name="q" id="queryParameter">
+
                                                     <div class="row form-group">
                                                         <div class="col-md-12">
+<<<<<<< HEAD
+                                                            <input type="submit"  id="sendIngredients" disabled="true" class="btn btn-primary btn-block" value="{% trans %} portada.encuentrareceta {%endtrans %}"
+=======
                                                             <input type="submit"  id="sendIngredients" disabled="true" class="btn btn-primary btn-block" value="{% trans %} portada.encuentrareceta {%endtrans %}">
+>>>>>>> elastic_serch_fix
                                                         </div>
                                                     </div>
                                                 </form>	

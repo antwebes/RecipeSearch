@@ -4,7 +4,7 @@
     
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-   
+    use Symfony\Component\HttpFoundation\Request;
 
 
     class DefaultController extends Controller{
@@ -18,28 +18,31 @@
         * )
         */
         public function pageAction($nombrePagina = 'ayuda'){
-            $em = $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();                                               
             
-
             return $this->render('sitio/'.$nombrePagina.'.html.twig');
         }
 
-
         
-        /**
-         * @Route("/search", 
-         * name="search_recipe"
-         * )
+         /**
+         * @Route("/recipe", name="list_recipe")
+         * 
          */
-        public function searcherAction(){
-            $em = $this->getDoctrine()->getManager();
-            $recipes = $em->getRepository('RecipeBundle:Recipe')->findAll();
-            
-            return $this->render('recipe.html.twig', array(
-                'recipes' => $recipes
-            ));
-        }
+        public function listControllerAction(Request $request){
+            $em    = $this->get('doctrine.orm.entity_manager');
+            $dql   = "SELECT a FROM RecipeBundle:Recipe a";
+            $query = $em->createQuery($dql);
 
+            $paginator  = $this->get('knp_paginator');
+            $pagination = $paginator->paginate(
+                $query, /* query NOT result */
+                $request->query->getInt('page', 1)/*page number*/,
+                3/*limit per page*/
+            );
+
+            return $this->render('recipe.html.twig', array('recipes' => $pagination));
+        }
+        
 
         /**
         * @Route("/recipe/{id}", name="show_recipe")

@@ -4,8 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0c4448e7fd73da2cdbe101e4cdbfac7c",
-    "content-hash": "b4377d9cca0a462599ca54454aec3de7",
+<<<<<<< HEAD
+    "hash": "4ff9b1465d3f1d2f14e77a5d7c33c67a",
+    "content-hash": "3021543c139dd19012dd75b7985c8f8d",
+=======
+    "hash": "7b3913c33a05f939391e8a5ab095ba34",
+    "content-hash": "5a5ab66c3e5c073c243013bc9cf97b26",
+>>>>>>> elastic_serch_fix
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -888,6 +893,19 @@
         },
         {
             "name": "friendsofsymfony/elastica-bundle",
+<<<<<<< HEAD
+            "version": "v2.1.3-PL1",
+            "target-dir": "FOS/ElasticaBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSElasticaBundle.git",
+                "reference": "7f8a8e95e6e3101bb2f186d5d10e0e590fa44c45"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/7f8a8e95e6e3101bb2f186d5d10e0e590fa44c45",
+                "reference": "7f8a8e95e6e3101bb2f186d5d10e0e590fa44c45",
+=======
             "version": "v3.2.1",
             "source": {
                 "type": "git",
@@ -898,10 +916,32 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/FriendsOfSymfony/FOSElasticaBundle/zipball/70ea4d0cb0ebdac011d6dc978bfec59ff5e927bb",
                 "reference": "70ea4d0cb0ebdac011d6dc978bfec59ff5e927bb",
+>>>>>>> elastic_serch_fix
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
+<<<<<<< HEAD
+                "ruflin/elastica": "0.19.8",
+                "symfony/console": "~2.1",
+                "symfony/form": "~2.1",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/property-access": "~2.2"
+            },
+            "require-dev": {
+                "doctrine/mongodb-odm": "1.0.*@dev",
+                "doctrine/orm": ">=2.2,<2.5-dev",
+                "knplabs/knp-components": "1.2.*",
+                "pagerfanta/pagerfanta": "1.0.*@dev",
+                "propel/propel1": "1.6.*"
+            },
+            "suggest": {
+                "doctrine/mongodb-odm": "1.0.*@dev",
+                "doctrine/orm": ">=2.2,<2.5-dev",
+                "knplabs/knp-components": "1.2.*",
+                "pagerfanta/pagerfanta": "1.0.*@dev",
+                "propel/propel1": "1.6.*"
+=======
                 "psr/log": "~1.0",
                 "ruflin/elastica": "~2.1",
                 "symfony/console": "~2.1|~3.0",
@@ -924,16 +964,26 @@
                 "symfony/expression-language": "~2.4|~3.0",
                 "symfony/serializer": "~2.7|~3.0",
                 "symfony/twig-bundle": "~2.3|~3.0"
+>>>>>>> elastic_serch_fix
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
+<<<<<<< HEAD
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\ElasticaBundle": ""
+=======
                     "dev-master": "3.2.x-dev"
                 }
             },
             "autoload": {
                 "psr-4": {
                     "FOS\\ElasticaBundle\\": ""
+>>>>>>> elastic_serch_fix
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -942,12 +992,25 @@
             ],
             "authors": [
                 {
+<<<<<<< HEAD
+                    "name": "Thibault Duplessis",
+                    "email": "thibault.duplessis@gmail.com",
+                    "homepage": "http://ornicar.github.com"
+                },
+                {
+                    "name": "Jeremy Mikola",
+                    "email": "jmikola@gmail.com",
+                    "homepage": "http://jmikola.net"
+=======
                     "name": "Tim Nagel",
                     "email": "tim@nagel.com.au"
+>>>>>>> elastic_serch_fix
                 },
                 {
                     "name": "Richard Miller",
                     "email": "richard.miller@limethinking.co.uk"
+<<<<<<< HEAD
+=======
                 },
                 {
                     "name": "FriendsOfSymfony Community",
@@ -956,6 +1019,7 @@
                 {
                     "name": "Jeremy Mikola",
                     "email": "jmikola@gmail.com"
+>>>>>>> elastic_serch_fix
                 }
             ],
             "description": "Elasticsearch PHP integration for your Symfony2 project using Elastica",
@@ -968,7 +1032,11 @@
                 "propel",
                 "search"
             ],
+<<<<<<< HEAD
+            "time": "2013-10-31 22:16:27"
+=======
             "time": "2016-10-04 12:27:23"
+>>>>>>> elastic_serch_fix
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1195,16 +1263,16 @@
         },
         {
             "name": "javiereguiluz/easyadmin-bundle",
-            "version": "v1.16.2",
+            "version": "v1.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/javiereguiluz/EasyAdminBundle.git",
-                "reference": "539743820a0c3e5613e3ccf3b7181f920b6d96b0"
+                "reference": "d377ac83a15c191f26a8fb63376562862f81fb4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/javiereguiluz/EasyAdminBundle/zipball/539743820a0c3e5613e3ccf3b7181f920b6d96b0",
-                "reference": "539743820a0c3e5613e3ccf3b7181f920b6d96b0",
+                "url": "https://api.github.com/repos/javiereguiluz/EasyAdminBundle/zipball/d377ac83a15c191f26a8fb63376562862f81fb4c",
+                "reference": "d377ac83a15c191f26a8fb63376562862f81fb4c",
                 "shasum": ""
             },
             "require": {
@@ -1274,7 +1342,7 @@
                 "backend",
                 "generator"
             ],
-            "time": "2016-11-23 18:55:02"
+            "time": "2016-11-15 19:24:54"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -2687,6 +2755,27 @@
         },
         {
             "name": "ruflin/elastica",
+<<<<<<< HEAD
+            "version": "v0.19.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ruflin/Elastica.git",
+                "reference": "34a7e62a257febd5295efeacfa0209712e0ceb65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ruflin/Elastica/zipball/34a7e62a257febd5295efeacfa0209712e0ceb65",
+                "reference": "34a7e62a257febd5295efeacfa0209712e0ceb65",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Elastica": "lib/"
+=======
             "version": "2.3.1",
             "source": {
                 "type": "git",
@@ -2722,11 +2811,16 @@
             "autoload": {
                 "psr-4": {
                     "Elastica\\": "lib/Elastica/"
+>>>>>>> elastic_serch_fix
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
+<<<<<<< HEAD
+                "Apache 2.0"
+=======
                 "MIT"
+>>>>>>> elastic_serch_fix
             ],
             "authors": [
                 {
@@ -2735,12 +2829,20 @@
                 }
             ],
             "description": "Elasticsearch Client",
+<<<<<<< HEAD
+            "homepage": "http://ruflin.github.com/Elastica/",
+=======
             "homepage": "http://elastica.io/",
+>>>>>>> elastic_serch_fix
             "keywords": [
                 "client",
                 "search"
             ],
+<<<<<<< HEAD
+            "time": "2012-08-12 16:51:36"
+=======
             "time": "2015-10-19 07:09:10"
+>>>>>>> elastic_serch_fix
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2902,16 +3004,16 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v5.4.4",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756"
+                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/545ce9136690cea74f98f86fbb9c92dd9ab1a756",
-                "reference": "545ce9136690cea74f98f86fbb9c92dd9ab1a756",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
+                "reference": "4cc92842069c2bbc1f28daaaf1d2576ec4dfe153",
                 "shasum": ""
             },
             "require": {
@@ -2951,7 +3053,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-11-24 01:01:23"
+            "time": "2016-07-08 11:51:25"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -3843,16 +3945,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.28.2",
+            "version": "v1.28.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b22ce0eb070e41f7cba65d78fe216de29726459c"
+                "reference": "fff80c4a7ae1d47a81dfec10c76cbcb939170b45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b22ce0eb070e41f7cba65d78fe216de29726459c",
-                "reference": "b22ce0eb070e41f7cba65d78fe216de29726459c",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/fff80c4a7ae1d47a81dfec10c76cbcb939170b45",
+                "reference": "fff80c4a7ae1d47a81dfec10c76cbcb939170b45",
                 "shasum": ""
             },
             "require": {
@@ -3860,7 +3962,7 @@
             },
             "require-dev": {
                 "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.2@dev"
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -3900,7 +4002,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-11-23 18:41:40"
+            "time": "2016-11-19 05:52:49"
         },
         {
             "name": "vich/uploader-bundle",

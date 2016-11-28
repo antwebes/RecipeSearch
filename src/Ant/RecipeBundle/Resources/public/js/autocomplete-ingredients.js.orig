@@ -1,9 +1,12 @@
 $(document).ready(function(){
     $( "#myTextField" ).focus();
     elementosDerecha = [];
+<<<<<<< HEAD
     firstli = null;
     
     
+=======
+>>>>>>> elastic_serch_fix
      $("#myTextField").on('keyup', function() {                           
              var input = $(this).val(); 
              if ( input.length >= 2 ) { 
@@ -45,6 +48,7 @@ $(document).ready(function(){
                                     emptySuggestionIngredients();
                                      $('#match').append($ul);
                                      
+<<<<<<< HEAD
                                      firstli = $("#match li:first");
 //                                      $('#recogeringredientes').html("<h1 style='color:white;'>"+firstli.html()+"</h1>");
                                     $('#matchList li').on('click', function() {
@@ -52,7 +56,18 @@ $(document).ready(function(){
                                     });                          
 
                                                 
-
+=======
+                                     
+                                     /*$ul.each(function(){
+                                         var $this = $(this);
+                                     });*/
+                                     
+                                     /*$ul.children().each(function(){
+                                         //$(this).remove();
+                                         if($(this).text() == 'Pechuga de pollo'){
+                                             $(this).remove();
+                                         }
+                                     })*/
                                      
                                      $('#match').empty().append($ul); 
                                      $('#matchList li').on('click', function() {
@@ -61,7 +76,7 @@ $(document).ready(function(){
                                              elementosDerecha.push($(this).text());
                                              $('#elementos').append('<li><span> <i class="removeIngredient fa fa-trash"></i> '+$(this).text()+'</span></li>');
                                      });     
-
+>>>>>>> elastic_serch_fix
                              },
                              error: function() { 
                                      $('#match').text('Problem!');
@@ -109,10 +124,27 @@ $(document).ready(function(){
     $(document).on('submit','#formSearch',function(event){
         $("#queryParameter").val(elementosDerecha.join());
     });
-  
+    
+    
+<<<<<<< HEAD
+    
+                    
+
+
+        
+        
 });   
 
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
 	/*$(function(){
             $(".slides").slidesjs({
                 play: {
@@ -157,6 +189,14 @@ $(document).ready(function(){
  
  
  
+=======
+    $(document).on('submit','#formSearch',function(event){
+        $("#queryParameter").val(elementosDerecha.join());
+    });
+
+    
+ });
+>>>>>>> elastic_serch_fix
 
 
 
@@ -188,15 +228,4 @@ $(document).ready(function(){
          
             $(this).parent().remove();
     });
-
-    $('#matchList li').on('click', function() {
-            $(this).attr("data-id");
-            $('#myTextField').val($(this).text()); 
-            $('#match').text('');
-            $('#elementos').append('<li><i class="removeIngredient fa fa-trash"></i> <span id="data-id">'+$(this).text()+'</span></li>');
-            $("#sendIngredients").prop('disabled', false);
-    });   
- });
-
-
 */
