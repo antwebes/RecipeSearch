@@ -21,4 +21,13 @@
         public function __construct(){
             parent::__construct();
         }
+        
+        
+        /**
+         * 
+         * @param string $password
+         */
+        public function setPasswordEnClaro($password){
+            
+        }
     }

@@ -31,6 +31,8 @@
             $boolQuery = new \Elastica\Query\BoolQuery();
             $fieldQuery = new \Elastica\Query\Match();
             $fieldQuery->setFieldQuery('ingredient', $parameterq[0]);
+            
+            //for para recorrer dinamicamente el array de ingredientes y mostrar todas las recetas
             $fieldSecondQuery = new \Elastica\Query\Match();
             $fieldSecondQuery->setFieldQuery('ingredient', $parameterq[0]);
             $boolQuery->addMust($fieldQuery);
@@ -63,7 +65,7 @@
    
             $paginator  = $this->get('knp_paginator');
             $pagination = $paginator->paginate(
-                $query, 
+                $query,
                 $request->query->getInt('page', 1),
                 3
             );
